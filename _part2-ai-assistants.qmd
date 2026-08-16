@@ -54,15 +54,15 @@ verify before you quote any of them.
 - **Gemini 3.7 Flash** heads the developer line-up, built for coding and multi-step agent work
 - **Gemini 3.1 Pro** is the large-context Pro model, still labelled preview
 - **Flash-Lite** tiers exist for high-volume work where cost matters more than depth
-- The Gemini app is the consumer surface — files, Deep Research, Canvas, Drive [@gemini-assistant]
+- The Gemini app is the consumer surface — files, Deep Research, Canvas, Drive
 
 ## Anthropic: the Claude Family
 
 - Named tiers, not numbers: **Opus** the flagship, **Sonnet** the workhorse, **Haiku** the fastest
 - **Claude Opus 5** is the current Opus; **Claude Sonnet 5** and **Claude Haiku 4.5** sit below it
 - **Claude Fable 5** sits above Opus for the hardest long-horizon work, at a higher price
-- Surfaces: claude.ai on web, desktop and mobile, plus Claude Code in the terminal [@claude-overview]
-- The API documents a managed data-analyst agent: CSV in, HTML report out [@claude-data-analyst]
+- Surfaces: claude.ai on web, desktop and mobile, plus Claude Code in the terminal
+- The API documents a managed data-analyst agent: CSV in, HTML report out
 
 ## OpenAI: the GPT Family
 
@@ -70,7 +70,7 @@ verify before you quote any of them.
 - **Sol** is the frontier model, for complex professional and research work
 - **Terra** balances capability against cost; **Luna** is the cheapest, for high volume
 - **GPT-5.5**, the April 2026 flagship, is still available and still competent
-- ChatGPT is the assistant surface; the same models are sold through the API [@openai-data-science]
+- ChatGPT is the assistant surface; the same models are sold through the API
 
 ## What "Frontier Model" Means
 
@@ -246,7 +246,7 @@ The assistant runs in your terminal, inside the project directory, and can act o
 ## Google Antigravity 2.0
 
 ::: {.goal}
-Google's agentic development platform, announced in its 2.0 form at I/O 2026 [@antigravity].
+Google's agentic development platform, announced in its 2.0 form at I/O 2026.
 :::
 
 - Three surfaces ship together: a desktop **IDE**, a terminal **CLI**, and a Python **SDK**

@@ -76,7 +76,12 @@ $code-block-border-color: $rule;
 .reveal .ks {
   border-top: 2px solid $accent;
   padding-top: .35em;
-  h3 {
+
+  // Deliberately a span, not an h3. A level-3 heading is promoted by pandoc's
+  // --section-divs into a <section>, and reveal.js reads a nested <section> as
+  // a vertical slide stack, which stops the deck advancing horizontally.
+  .ks-label {
+    display: block;
     font-size: .78em;
     text-transform: uppercase;
     letter-spacing: .07em;

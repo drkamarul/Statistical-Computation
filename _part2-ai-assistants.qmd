@@ -1,4 +1,4 @@
-# Part 2 — AI Assistants {background-color="#1A1A1A"}
+## Part 2 — AI Assistants {background-color="#1A1A1A"}
 
 Providers · Models · Web, IDE, CLI · Best practice
 
@@ -164,7 +164,8 @@ You bring the problem to a browser tab; the assistant never sees your project.
 :::: {.columns}
 ::: {.column width="50%"}
 ::: {.ks}
-### Strengths
+[Strengths]{.ks-label}
+
 - No setup at all
 - Easy to compare assistants side by side
 - Good for learning and one-off questions
@@ -172,7 +173,8 @@ You bring the problem to a browser tab; the assistant never sees your project.
 :::
 ::: {.column width="50%"}
 ::: {.ks}
-### Limits
+[Limits]{.ks-label}
+
 - Manual copy-paste in both directions
 - The assistant cannot see your files, so you manage context by hand
 :::
@@ -196,7 +198,8 @@ The assistant lives inside your editor and can see the project you already have 
 :::: {.columns}
 ::: {.column width="50%"}
 ::: {.ks}
-### Strengths
+[Strengths]{.ks-label}
+
 - It sees your data, your plots and your session
 - Edits arrive as a reviewable diff
 - One window for writing, running and asking
@@ -204,7 +207,8 @@ The assistant lives inside your editor and can see the project you already have 
 :::
 ::: {.column width="50%"}
 ::: {.ks}
-### Limits
+[Limits]{.ks-label}
+
 - Installation, configuration and an API key
 - Easy to accept a diff you did not read
 :::
@@ -228,7 +232,8 @@ The assistant runs in your terminal, inside the project directory, and can act o
 :::: {.columns}
 ::: {.column width="50%"}
 ::: {.ks}
-### Strengths
+[Strengths]{.ks-label}
+
 - Handles work that spans many files
 - Runs the code and reads its own errors
 - Fits naturally with Git and version control
@@ -236,7 +241,8 @@ The assistant runs in your terminal, inside the project directory, and can act o
 :::
 ::: {.column width="50%"}
 ::: {.ks}
-### Limits
+[Limits]{.ks-label}
+
 - The most autonomy, so the most supervision
 - Least forgiving of a vague instruction
 :::

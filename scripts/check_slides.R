@@ -46,6 +46,16 @@ check_file <- function(path, budget) {
         sprintf("%s: slide %d (%s) has %d bullets, max is %d",
                 path, i, title, nb, MAX_BULLETS))
     }
+
+    # A level-3 heading is promoted by pandoc's --section-divs into a <section>,
+    # and reveal.js reads a <section> nested inside a slide as a vertical slide
+    # stack. That silently breaks horizontal navigation from this slide onward:
+    # the deck simply stops advancing. Use [Label]{.ks-label} instead.
+    if (any(grepl("^### ", body))) {
+      problems <- c(problems,
+        sprintf("%s: slide %d (%s) uses a '### ' heading, which reveal.js turns into a nested vertical slide -- use [Label]{.ks-label}",
+                path, i, title))
+    }
   }
   problems
 }

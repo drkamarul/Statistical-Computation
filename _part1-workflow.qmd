@@ -1,4 +1,4 @@
-# Part 1 — The REAAAPP Workflow {background-color="#1A1A1A"}
+## Part 1 — The REAAAPP Workflow {background-color="#1A1A1A"}
 
 Read · Explore · Assume · Apply · Assess · Present · Publish
 
@@ -54,7 +54,8 @@ conventions intact.
 :::: {.columns}
 ::: {.column width="50%"}
 ::: {.ks}
-### Knowledge required
+[Knowledge required]{.ks-label}
+
 - How your source format encodes missing values
 - Variable types and what coercion costs you
 - Where the data came from and who owns it
@@ -62,7 +63,8 @@ conventions intact.
 :::
 ::: {.column width="50%"}
 ::: {.ks}
-### Skill required
+[Skill required]{.ks-label}
+
 - Import with `readr`, `haven`, `readxl`
 - Script the import and check types — never edit the raw file
 :::
@@ -91,7 +93,8 @@ is fitted.
 :::: {.columns}
 ::: {.column width="50%"}
 ::: {.ks}
-### Knowledge required
+[Knowledge required]{.ks-label}
+
 - What EDA is for, and when you have done enough
 - When a graphic beats a table, and when it does not
 - What a missingness pattern implies for the analysis
@@ -99,7 +102,8 @@ is fitted.
 :::
 ::: {.column width="50%"}
 ::: {.ks}
-### Skill required
+[Skill required]{.ks-label}
+
 - Summarise with `skimr` and `gtsummary`, plot with `ggplot2`
 - Read a distribution and spot impossible values
 :::
@@ -127,7 +131,8 @@ Tools: ggplot2 · gtsummary · skimr · naniar
 :::: {.columns}
 ::: {.column width="50%"}
 ::: {.ks}
-### Knowledge required
+[Knowledge required]{.ks-label}
+
 - Population versus sample, and what representativeness buys you
 - Exposure, confounder, mediator and moderator are different roles
 - Outcome types: continuous, binary, count, time-to-event
@@ -135,7 +140,8 @@ Tools: ggplot2 · gtsummary · skimr · naniar
 :::
 ::: {.column width="50%"}
 ::: {.ks}
-### Skill required
+[Skill required]{.ks-label}
+
 - Draw the assumed relationship before you fit anything
 - Write the assumptions down where a reviewer can read them
 :::
@@ -163,7 +169,8 @@ Tools: dagitty.net · the `dagitty` R package · a whiteboard and a photograph o
 :::: {.columns}
 ::: {.column width="50%"}
 ::: {.ks}
-### Knowledge required
+[Knowledge required]{.ks-label}
+
 - Estimation, testing, inference and prediction are distinct goals
 - Univariable versus multivariable model building
 - Where statistical learning ends and machine learning begins
@@ -171,7 +178,8 @@ Tools: dagitty.net · the `dagitty` R package · a whiteboard and a photograph o
 :::
 ::: {.column width="50%"}
 ::: {.ks}
-### Skill required
+[Skill required]{.ks-label}
+
 - Fit with `lm`, `glm` and `lme4`, and read the output
 - Keep every model in a script that runs start to finish
 :::
@@ -199,7 +207,8 @@ Tools: R · RStudio · Posit Cloud · lm · glm · lme4 · tidymodels
 :::: {.columns}
 ::: {.column width="50%"}
 ::: {.ks}
-### Knowledge required
+[Knowledge required]{.ks-label}
+
 - What diagnostic plots can and cannot tell you
 - The difference between an outlier and an influential point
 - Internal versus external validity
@@ -207,7 +216,8 @@ Tools: R · RStudio · Posit Cloud · lm · glm · lme4 · tidymodels
 :::
 ::: {.column width="50%"}
 ::: {.ks}
-### Skill required
+[Skill required]{.ks-label}
+
 - Read diagnostic output and compute the right performance measure
 - Decide when to revise the model and when to stop
 :::
@@ -235,7 +245,8 @@ Tools: broom · performance · car · pROC
 :::: {.columns}
 ::: {.column width="50%"}
 ::: {.ks}
-### Knowledge required
+[Knowledge required]{.ks-label}
+
 - The SAMPL guidelines for biomedical journals
 - The ASA statement on p-values and statistical significance
 - What your audience already knows and what they need
@@ -243,7 +254,8 @@ Tools: broom · performance · car · pROC
 :::
 ::: {.column width="50%"}
 ::: {.ks}
-### Skill required
+[Skill required]{.ks-label}
+
 - Build tables with `gtsummary` and `gt`
 - Write an interpretation, not just an estimate
 :::
@@ -271,7 +283,8 @@ Tools: gtsummary · gt · flextable · Quarto
 :::: {.columns}
 ::: {.column width="50%"}
 ::: {.ks}
-### Knowledge required
+[Knowledge required]{.ks-label}
+
 - What version control does that careful file naming does not
 - Repository and licence choices for data
 - What makes a dataset reusable by someone who was not there
@@ -279,7 +292,8 @@ Tools: gtsummary · gt · flextable · Quarto
 :::
 ::: {.column width="50%"}
 ::: {.ks}
-### Skill required
+[Skill required]{.ks-label}
+
 - Use Git and GitHub for code, results and reports
 - Deposit the data and publish a Quarto site or a Shiny app
 :::

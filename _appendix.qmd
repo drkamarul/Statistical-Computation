@@ -46,8 +46,8 @@ Questions?
 
 ## References — AI Assistants
 
-- Google. *Gemini Assistant.* [@gemini-assistant]
-- Anthropic. *Claude: Product Overview.* [@claude-overview]
-- Anthropic. *Managed Agents: Data Analyst Agent.* [@claude-data-analyst]
-- OpenAI. *AI for Data Science and Analytics.* [@openai-data-science]
-- Google. *Antigravity.* [@antigravity]
+- Google. *Gemini Assistant* — <https://gemini.google/assistant/>
+- Anthropic. *Claude: Product Overview* — <https://claude.com/product/overview>
+- Anthropic. *Managed Agents: Data Analyst Agent* — <https://platform.claude.com/cookbook/managed-agents-data-analyst-agent>
+- OpenAI. *AI for Data Science and Analytics* — <https://chatgpt.com/business/ai-for-data-science-analytics/>
+- Google. *Antigravity* — <https://antigravity.google/>

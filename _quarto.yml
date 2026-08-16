@@ -22,3 +22,4 @@ format:
     code-line-numbers: false
     highlight-style: github
     embed-resources: false
+    suppress-bibliography: true

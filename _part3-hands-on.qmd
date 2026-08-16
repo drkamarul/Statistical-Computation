@@ -1,0 +1,47 @@
+## Part 3 — Your Task {background-color="#1A1A1A"}
+
+Build a data analysis plan that integrates REAAAPP with your own AI assistant.
+
+- Pick a dataset you are actually working on
+- Write the plan before you write any analysis code
+- Name which assistant you will use at each stage
+- The plan is the deliverable, not the results
+- You will run it after this session
+
+## The Project Scaffold
+
+::: {.goal}
+Your assistant can only help with what it can see. Structure the folder first.
+:::
+
+```
+project/
+├── data/raw/          untouched source data
+├── data/processed/    what your script produces
+├── resources/         data dictionary, reference papers, example code
+├── R/                 your scripts
+└── implementation_plan.md
+```
+
+- Keep raw data read-only and never edit it by hand
+- `resources/` is what you point the assistant at
+- The plan file is the assistant's brief
+
+## Your `implementation_plan.md`
+
+Seven headings, one per stage — fill each with what you will actually do.
+
+```markdown
+# Analysis Plan: <your study>
+## 1. Read      — sources, formats, provenance
+## 2. Explore   — summaries and checks before modelling
+## 3. Assume    — outcome, exposures, confounders, assumed relationships
+## 4. Apply     — models, and why those models
+## 5. Assess    — diagnostics, performance, validity
+## 6. Present   — tables, interpretation, target audience
+## 7. Publish   — repository, licence, where the code goes
+```
+
+::: {.note}
+Write it in markdown so your assistant can read it as easily as you can.
+:::

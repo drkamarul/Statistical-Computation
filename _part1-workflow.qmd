@@ -1,0 +1,376 @@
+# Part 1 — The REAAAPP Workflow {background-color="#1A1A1A"}
+
+Read · Explore · Assume · Apply · Assess · Present · Publish
+
+## Why You Need a Workflow
+
+::: {.goal}
+Analysis fails more often from missing process than from missing statistics.
+:::
+
+- Data arrive bigger, in more formats, and from more centres than before
+- Analyses are more complex, so more places to go quietly wrong
+- Without a named sequence, steps get skipped under time pressure
+- A shared workflow lets a team divide work without losing the thread
+- Reviewers and journals increasingly ask how, not just what
+
+## REAAAPP at a Glance
+
+| | Stage | What it delivers |
+|---|---|---|
+| **R** | Read | Data of known provenance, in your environment |
+| **E** | Explore | Understanding of distribution, missingness, structure |
+| **A** | Assume | An explicit list of what the analysis depends on |
+| **A** | Apply | Fitted models and methods |
+| **A** | Assess | Evidence the model is adequate and valid |
+| **P** | Present | Results an audience can act on |
+| **P** | Publish | Results, data and code others can verify |
+
+## How Each Stage Is Presented
+
+Every stage in this part gets the same two slides.
+
+- **Goal** — what the stage must achieve before you move on
+- **Knowledge required** — what you need to understand
+- **Skill required** — what you need to be able to do
+- **Tools** — what you do it with
+- Learn the shape once, then read any stage quickly
+
+## R — Read Data
+
+::: {.goal}
+**Goal:** get the data into R with its provenance, types and missing-value
+conventions intact.
+:::
+
+- Sources are offline, cloud, or hybrid — record which
+- Structured formats: CSV, Excel, SPSS, SAS, Stata
+- Unstructured sources need a conversion step you must document
+- Reading is where silent type coercion does its damage
+- Nothing downstream is trustworthy if this step is careless
+
+## R — Read: Knowledge and Skill
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.ks}
+### Knowledge required
+- How your source format encodes missing values
+- Variable types and what coercion costs you
+- Where the data came from and who owns it
+:::
+:::
+::: {.column width="50%"}
+::: {.ks}
+### Skill required
+- Import with `readr`, `haven`, `readxl`
+- Script the import and check types — never edit the raw file
+:::
+:::
+::::
+
+::: {.note}
+Tools: readr · haven · readxl · here
+:::
+
+## E — Explore Data
+
+::: {.goal}
+**Goal:** understand distributions, missingness and structure before any model
+is fitted.
+:::
+
+- Exploration takes two forms: visualisation and tabulation
+- EDA summarises the main characteristics of the data
+- This is the stage most often skipped, and it costs the most
+- Impossible values and implausible ranges surface here or not at all
+- Missingness has a pattern — find out what it is
+
+## E — Explore: Knowledge and Skill
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.ks}
+### Knowledge required
+- What EDA is for, and when you have done enough
+- When a graphic beats a table, and when it does not
+- What a missingness pattern implies for the analysis
+:::
+:::
+::: {.column width="50%"}
+::: {.ks}
+### Skill required
+- Summarise with `skimr` and `gtsummary`, plot with `ggplot2`
+- Read a distribution and spot impossible values
+:::
+:::
+::::
+
+::: {.note}
+Tools: ggplot2 · gtsummary · skimr · naniar
+:::
+
+## A — Assume
+
+::: {.goal}
+**Goal:** state what the intended analysis depends on, before fitting it.
+:::
+
+- Every statistical test carries underlying assumptions
+- Statistics does not infer valid conclusions from nothing
+- The sample must be representative of the population you claim to describe
+- Name the roles: exposure, confounder, mediator, moderator
+- State the outcome and the relationship you assume it has
+
+## A — Assume: Knowledge and Skill
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.ks}
+### Knowledge required
+- Population versus sample, and what representativeness buys you
+- Exposure, confounder, mediator and moderator are different roles
+- Outcome types: continuous, binary, count, time-to-event
+:::
+:::
+::: {.column width="50%"}
+::: {.ks}
+### Skill required
+- Draw the assumed relationship before you fit anything
+- Write the assumptions down where a reviewer can read them
+:::
+:::
+::::
+
+::: {.note}
+Tools: dagitty.net · the `dagitty` R package · a whiteboard and a photograph of it
+:::
+
+## A — Apply Models and Methods
+
+::: {.goal}
+**Goal:** fit the models and methods the research question actually needs.
+:::
+
+- Statistical analysis covers estimation, hypothesis testing, inference and prediction
+- Decide first whether you want inference or prediction — they are not the same
+- Univariable before multivariable; univariate is not multivariate
+- Machine learning adds supervised, unsupervised and semi-supervised work
+- R is the working environment: a language plus a runtime for all of it
+
+## A — Apply: Knowledge and Skill
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.ks}
+### Knowledge required
+- Estimation, testing, inference and prediction are distinct goals
+- Univariable versus multivariable model building
+- Where statistical learning ends and machine learning begins
+:::
+:::
+::: {.column width="50%"}
+::: {.ks}
+### Skill required
+- Fit with `lm`, `glm` and `lme4`, and read the output
+- Keep every model in a script that runs start to finish
+:::
+:::
+::::
+
+::: {.note}
+Tools: R · RStudio · Posit Cloud · lm · glm · lme4 · tidymodels
+:::
+
+## A — Assess Results and Models
+
+::: {.goal}
+**Goal:** show that the model is adequate, and say where the result applies.
+:::
+
+- Re-check the assumptions against the model you actually fitted
+- Outliers and influential observations are two different problems
+- Performance for continuous outcomes: R-squared and residual behaviour
+- Performance for classification: accuracy, sensitivity, specificity
+- Validity: internal first, then how far the result travels
+
+## A — Assess: Knowledge and Skill
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.ks}
+### Knowledge required
+- What diagnostic plots can and cannot tell you
+- The difference between an outlier and an influential point
+- Internal versus external validity
+:::
+:::
+::: {.column width="50%"}
+::: {.ks}
+### Skill required
+- Read diagnostic output and compute the right performance measure
+- Decide when to revise the model and when to stop
+:::
+:::
+::::
+
+::: {.note}
+Tools: broom · performance · car · pROC
+:::
+
+## P — Present Results
+
+::: {.goal}
+**Goal:** report the results so that the audience can act on them.
+:::
+
+- Reporting guidelines exist: SAMPL covers basic statistical reporting
+- The ASA is explicit — no single index should substitute for scientific reasoning
+- Report the estimate and its precision, not the p-value alone
+- Find out what your audience already understands before you simplify
+- Simplifying and convincing are part of the analysis, not an afterthought
+
+## P — Present: Knowledge and Skill
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.ks}
+### Knowledge required
+- The SAMPL guidelines for biomedical journals
+- The ASA statement on p-values and statistical significance
+- What your audience already knows and what they need
+:::
+:::
+::: {.column width="50%"}
+::: {.ks}
+### Skill required
+- Build tables with `gtsummary` and `gt`
+- Write an interpretation, not just an estimate
+:::
+:::
+::::
+
+::: {.note}
+Tools: gtsummary · gt · flextable · Quarto
+:::
+
+## P — Publish Results, Data and Code
+
+::: {.goal}
+**Goal:** release results, data and code so that others can verify them.
+:::
+
+- Code belongs in version control in the cloud, not in a folder on your laptop
+- GitHub adds access control, issue tracking and continuous integration to Git
+- Data can be deposited in Zenodo, OSF, Dryad, figshare or a domain repository
+- Results can be published as a site, a report, or a dashboard
+- Shiny turns an analysis into something a clinician can actually use
+
+## P — Publish: Knowledge and Skill
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.ks}
+### Knowledge required
+- What version control does that careful file naming does not
+- Repository and licence choices for data
+- What makes a dataset reusable by someone who was not there
+:::
+:::
+::: {.column width="50%"}
+::: {.ks}
+### Skill required
+- Use Git and GitHub for code, results and reports
+- Deposit the data and publish a Quarto site or a Shiny app
+:::
+:::
+::::
+
+::: {.note}
+Tools: Git · GitHub · Quarto · Shiny · Zenodo · OSF · Dryad
+:::
+
+## Reproducibility Runs Through Every Stage
+
+::: {.goal}
+Every stage should leave behind an artefact that someone else can rerun.
+:::
+
+- The raw file is read-only; every change to it happens in code
+- Relative paths, so the project survives moving between machines
+- Record package versions — results drift when packages change
+
+```r
+library(here)
+library(readr)
+
+dat_raw <- read_csv(here("data-raw", "cohort_2026.csv"))
+```
+
+## Working in a Team: Git as the Backbone
+
+::: {.goal}
+Analysis by a team means code, results and reports have to move together.
+:::
+
+- Git records who changed what and when, without renamed copies
+- Cloud drives sync files; only a commit records why the change was made
+- Branches let two analysts work without overwriting each other
+
+```bash
+git add analysis/model-fit.R
+git commit -m "Fit adjusted model with centre as random intercept"
+git push
+```
+
+## Reporting Guidelines You Should Know
+
+- **SAMPL** — Statistical Analyses and Methods in the Published Literature
+- **ASA statement on p-values**, *The American Statistician*, 2016
+- **American Heart Association** recommendations for statistical reporting in cardiovascular medicine
+- The EQUATOR Network hosts these alongside the study-design checklists
+- Read the guideline for your design before you write the methods section
+
+## Publishing Data: Credit and Reuse
+
+::: {.goal}
+A deposited dataset is a citable research output in its own right.
+:::
+
+- Credit and recognition for work that a paper alone does not show
+- Discoverability — indexed repositories reach readers your paper will not
+- Reusability and accessibility for the next research question
+- Zenodo, OSF, Dryad and figshare; GEO and GenBank for domain data
+
+## Rate Yourself at Each Stage
+
+::: {.goal}
+Ask two questions at every stage: am I using the right tools, and how good am I
+with them?
+:::
+
+- **Novice** — you can follow a worked example
+- **Intermediate** — you can adapt it to your own data
+- **Advanced** — you can judge when the method itself is wrong
+- The gaps are rarely uniform; rate yourself stage by stage
+- Where the gap matters, get trained or bring in a collaborator
+
+## Where Workflows Break Down
+
+- Explore is skipped when the deadline is close, and the errors surface late
+- Assumptions stay in your head, so nobody can check them
+- Models are fitted but never assessed
+- Analyses are finished but never published, so nothing can be verified
+- No version control, so `final_v3_really_final.R` becomes the archive
+
+## Part 1 — Recap
+
+::: {.goal}
+Read · Explore · Assume · Apply · Assess · Present · Publish
+:::
+
+- Data arrive in many formats and analyses keep getting more complex
+- Use the right tools at each stage, and know how good you are with them
+- Knowledge and skill are different things; each stage needs both
+- Work in a team and leverage other people's expertise
+- Be willing to let go of the old tools

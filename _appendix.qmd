@@ -1,0 +1,53 @@
+## Five Key Takeaways
+
+::: {.takeaway}
+**1. The workflow comes first.** REAAAPP gives every analysis the same seven
+named stages, so nothing gets skipped under pressure.
+:::
+
+::: {.takeaway}
+**2. Explore is not optional.** Most analysis failures are visible in the data
+before any model is fitted.
+:::
+
+::: {.takeaway}
+**3. AI accelerates each stage; it does not replace your judgement.** You stay
+accountable for every number you publish.
+:::
+
+::: {.takeaway}
+**4. Verify everything the assistant gives you.** Unverified code costs more
+time than it saves.
+:::
+
+::: {.takeaway}
+**5. Publishing is part of the analysis.** Code and data in a repository is
+what makes the work checkable.
+:::
+
+## Thank You
+
+- **Email:** drki.musa@gmail.com
+- **Web:** myanalytics.com.my
+- **Slides:** https://drkamarul.github.io/Smart_Data_Analysis/
+- **Source:** https://github.com/drkamarul/Smart_Data_Analysis
+
+::: {.note}
+Questions?
+:::
+
+## References — Workflow
+
+- Musa KI. *Data Analysis Workflow.* Universiti Sains Malaysia.
+- Musa KI. *Smart Data Analysis in Medical and Health Research.*
+- Lang TA, Altman DG. *SAMPL Guidelines for Statistical Reporting.* EQUATOR Network.
+- Wasserstein RL, Lazar NA. The ASA's statement on p-values. *Am Stat.* 2016;70(2):129–33.
+- Musa KI, Wan Mansor WN, Tengku Hanis TM. *Data Analysis in Medicine and Health Using R.* CRC Press.
+
+## References — AI Assistants
+
+- Google. *Gemini Assistant* — <https://gemini.google/assistant/>
+- Anthropic. *Claude: Product Overview* — <https://claude.com/product/overview>
+- Anthropic. *Managed Agents: Data Analyst Agent* — <https://platform.claude.com/cookbook/managed-agents-data-analyst-agent>
+- OpenAI. *AI for Data Science and Analytics* — <https://chatgpt.com/business/ai-for-data-science-analytics/>
+- Google. *Antigravity* — <https://antigravity.google/>

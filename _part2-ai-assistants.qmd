@@ -43,7 +43,9 @@ Three companies train the models that most health researchers will actually touc
 | **OpenAI** | GPT | ChatGPT · OpenAI API |
 
 ::: {.note}
-Model names turn over every few months. The three names in the middle column do not.
+Model names turn over every few months; the three names in the middle column do not. Every model
+name in the next five slides was checked against provider documentation on **16 August 2026** —
+verify before you quote any of them.
 :::
 
 ## Google: the Gemini Family
@@ -56,7 +58,7 @@ Model names turn over every few months. The three names in the middle column do 
 
 ## Anthropic: the Claude Family
 
-- Named tiers, not numbers: **Opus** most capable, **Sonnet** the workhorse, **Haiku** the fastest
+- Named tiers, not numbers: **Opus** the flagship, **Sonnet** the workhorse, **Haiku** the fastest
 - **Claude Opus 5** is the current Opus; **Claude Sonnet 5** and **Claude Haiku 4.5** sit below it
 - **Claude Fable 5** sits above Opus for the hardest long-horizon work, at a higher price
 - Surfaces: claude.ai on web, desktop and mobile, plus Claude Code in the terminal [@claude-overview]
@@ -91,8 +93,8 @@ Frontier means the most capable model a company has — kept closed, and rented 
 | **OpenAI** | GPT-5.6 | Sol · Terra · Luna |
 
 ::: {.note}
-Checked against provider documentation on 16 August 2026. Assume this table is stale within a
-semester, and check before you quote it.
+Generations and line-ups as documented on 16 August 2026. Assume this table is stale within a
+semester.
 :::
 
 ## Open-Weight Models
@@ -127,10 +129,10 @@ Pasting a patient dataset into a chat box is a cross-border transfer of personal
 not you thought of it that way.
 :::
 
-- Consumer chat products and paid APIs have different retention and training defaults — know which you are on
-- Anthropic's commercial terms say customer content is not used to train models; default API log retention is 7 days, and zero data retention is a negotiated agreement, not a checkbox
-- Malaysia's PDPA (Amendment) Act 2024 deleted the s.129 "whitelist": a transfer abroad now needs a substantially similar law, or equivalent protection, at the other end
-- The same Act adds mandatory breach notification and a data protection officer; Guidelines 03/2025 govern cross-border transfer specifically
+- Consumer chat and paid API carry different retention and training defaults — the figures below are Anthropic's only because Anthropic publishes them, so check your own vendor's current terms yourself
+- Anthropic's commercial terms say customer content is not used to train models, and that API inputs and outputs are deleted within **30 days**; zero data retention is a negotiated agreement, not a checkbox
+- **HIPAA-ready API access exists**, behind a signed BAA that eligible organisations can execute self-serve in the Console — but it covers the API only, not Claude Code, and once enabled it cannot be switched off
+- Malaysia's PDPA (Amendment) Act 2024 deleted the s.129 "whitelist": a transfer abroad now needs a substantially similar law or equivalent protection, alongside breach notification, a DPO, and Guidelines 03/2025
 - Safe default: de-identify, or send only column names, types and a synthetic sample — you want code back, not conclusions
 
 ## Three Places to Use an Assistant

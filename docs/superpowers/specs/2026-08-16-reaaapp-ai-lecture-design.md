@@ -19,10 +19,11 @@ By the end of the lecture students will be able to:
 
 ## 2. The REAAAPP workflow (authoritative definition)
 
-Seven stages. This spelling and ordering is authoritative for the whole project
-and supersedes the "REAPPP" spelling in `About_This_Project.md`, which was a
-typo. It matches slide 7 of *Smart Data Analysis in Medical and Health Research*
-and the seven-step figure in *Data Analysis Workflow*.
+Seven stages. This spelling and ordering is authoritative for the whole project.
+It matches slide 7 of *Smart Data Analysis in Medical and Health Research* and
+the seven-step figure in *Data Analysis Workflow*. `About_This_Project.md`
+originally read "REAPPP"; this was confirmed as a typo and corrected at source
+on 2026-08-16, so no variant spelling remains anywhere in the project.
 
 | # | Letter | Stage | One-line goal |
 |---|--------|-------|---------------|

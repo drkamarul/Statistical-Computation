@@ -6,3 +6,11 @@ institute: "Professor of Medical Epidemiology and Statistics<br>School of Medica
 date: today
 date-format: "D MMMM YYYY"
 ---
+
+{{< include _part1-workflow.qmd >}}
+
+{{< include _part2-ai-assistants.qmd >}}
+
+{{< include _part3-hands-on.qmd >}}
+
+{{< include _appendix.qmd >}}

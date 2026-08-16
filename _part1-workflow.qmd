@@ -143,7 +143,7 @@ Tools: ggplot2 · gtsummary · skimr · naniar
 ::::
 
 ::: {.note}
-Tools: DAGitty · dagitty · a whiteboard and a photograph of it
+Tools: dagitty.net · the `dagitty` R package · a whiteboard and a photograph of it
 :::
 
 ## A — Apply Models and Methods
@@ -327,7 +327,7 @@ git push
 
 - **SAMPL** — Statistical Analyses and Methods in the Published Literature
 - **ASA statement on p-values**, *The American Statistician*, 2016
-- **AHA/ASA** statistical reporting recommendations for cardiovascular research
+- **American Heart Association** recommendations for statistical reporting in cardiovascular medicine
 - The EQUATOR Network hosts these alongside the study-design checklists
 - Read the guideline for your design before you write the methods section
 

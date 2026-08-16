@@ -44,7 +44,7 @@ Three companies train the models that most health researchers will actually touc
 
 ::: {.note}
 Model names turn over every few months; the three names in the middle column do not. Every model
-name in the next five slides was checked against provider documentation on **16 August 2026** —
+name in the next six slides was checked against provider documentation on **16 August 2026** —
 verify before you quote any of them.
 :::
 
@@ -122,17 +122,17 @@ Open weights mean you can download the model and run it on hardware you control.
 For identifiable patient data, the privacy row often settles the question on its own.
 :::
 
-## Health Data: the Confidentiality Question
+## Health Data: the Confidentiality Question {.smaller}
 
 ::: {.goal}
 Pasting a patient dataset into a chat box is a cross-border transfer of personal data, whether or
 not you thought of it that way.
 :::
 
-- Consumer chat and paid API carry different retention and training defaults — the figures below are Anthropic's only because Anthropic publishes them, so check your own vendor's current terms yourself
-- Anthropic's commercial terms say customer content is not used to train models, and that API inputs and outputs are deleted within **30 days**; zero data retention is a negotiated agreement, not a checkbox
-- **HIPAA-ready API access exists**, behind a signed BAA that eligible organisations can execute self-serve in the Console — but it covers the API only, not Claude Code, and once enabled it cannot be switched off
-- Malaysia's PDPA (Amendment) Act 2024 deleted the s.129 "whitelist": a transfer abroad now needs a substantially similar law or equivalent protection, alongside breach notification, a DPO, and Guidelines 03/2025
+- Consumer chat and paid API differ in retention/training defaults; figures are Anthropic's only — verify your vendor's terms
+- Anthropic: content not used to train models; API data deleted within **30 days**; zero-retention is negotiated, not a checkbox
+- **HIPAA-ready API access** via self-serve BAA in Console — API only, excludes Claude Code, cannot be switched off once enabled
+- Malaysia's PDPA 2024 dropped the s.129 whitelist: transfers abroad need equivalent protection, breach notice, a DPO, Guidelines 03/2025
 - Safe default: de-identify, or send only column names, types and a synthetic sample — you want code back, not conclusions
 
 ## Three Places to Use an Assistant
@@ -285,6 +285,9 @@ Write the implementation plan first — the plan is the prompt.
 # 2. Explore skimr summary; check age 18-90, sbp 60-250
 # 3. Assume  outcome binary; exposure = treatment; confounders = age, sex
 # 4. Apply   glm(outcome ~ treatment + age + sex, family = binomial)
+# 5. Assess  performance::check_model(); confusion matrix if classification
+# 6. Present gtsummary table; report the estimate and 95% CI, not p alone
+# 7. Publish push to GitHub; render the Quarto report; deposit the data
 ```
 
 ## Best Practice: Verify Everything

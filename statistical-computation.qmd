@@ -1,0 +1,36 @@
+---
+title: "Statistical Computation"
+subtitle: "Integrating Data Analysis Workflow and AI Assistants"
+author:
+  - name: "Kamarul Imran Musa, MD PhD"
+    url: "https://myanalytics.com.my"
+    affiliation: "Professor of Medical Epidemiology and Statistics, School of Medical Sciences, Universiti Sains Malaysia"
+date: today
+date-format: "D MMMM YYYY"
+bibliography: references.bib
+suppress-bibliography: true
+format:
+  revealjs:
+    theme: [default, styles/academic.scss]
+    embed-resources: true
+    slide-number: c/t
+    show-slide-number: all
+    progress: true
+    history: true
+    width: 1280
+    height: 720
+    margin: 0.07
+    center: false
+    incremental: false
+    link-external-newwindow: true
+    code-line-numbers: false
+    highlight-style: github
+---
+
+{{< include _part1-workflow.qmd >}}
+
+{{< include _part2-ai-assistants.qmd >}}
+
+{{< include _part3-hands-on.qmd >}}
+
+{{< include _appendix.qmd >}}

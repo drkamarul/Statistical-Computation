@@ -2,7 +2,7 @@
 
 **Date:** 2026-08-16
 **Author:** Kamarul Imran Musa (with Claude)
-**Status:** Approved
+**Status:** Superseded by [2026-10-14-rreaaapp-revision-design.md](2026-10-14-rreaaapp-revision-design.md) (RREAAAPP, 8 stages)
 
 ## 1. Purpose
 

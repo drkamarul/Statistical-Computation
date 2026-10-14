@@ -1,47 +1,45 @@
-## Part 3 — Your Task {background-color="#1A1A1A"}
+## Part 3 — Your 20 Minute Plan {background-color="#1A1A1A"}
 
-Build a data analysis plan that integrates REAAAPP with your own AI assistant.
+Write a RREAAAPP plan for the MSSM fasting blood sugar data, with your own AI assistant.
 
-- Pick a dataset you are actually working on
-- Write the plan before you write any analysis code
-- Name which assistant you will use at each stage
-- The plan is the deliverable, not the results
-- You will run it after this session
+- **2 min**: Reason: write your question, population, outcome and variables in one sentence
+- **8 min**: give your assistant your Reason and the variable list; ask for a draft plan
+- **7 min**: check the draft stage by stage, and correct anything wrong
+- **3 min**: save it as `implementation_plan.md` and push it to your GitHub repository
+- The plan is what you hand in today; you run the analysis after this session
 
-## The Project Scaffold
-
-::: {.goal}
-Your assistant can only help with what it can see. Structure the folder first.
-:::
+## Set Up Your Project
 
 ```
-project/
-├── data/raw/          untouched source data
-├── data/processed/    what your script produces
-├── resources/         data dictionary, reference papers, example code
-├── R/                 your scripts
-└── implementation_plan.md
+fbs-analysis/
+├── datasets/mssm_fbs_workshop.xlsx   given in class, never pushed
+├── R/                                your scripts
+├── .gitignore                        contains the line: datasets/
+└── implementation_plan.md            your plan
 ```
 
-- Keep raw data read-only and never edit it by hand
-- `resources/` is what you point the assistant at
-- The plan file is the assistant's brief
+- Open the folder in Positron: **File → Open Folder**
+- Variables: `fasting_blood_sugar`, `waist_cm`, `age`, `malefemale`, `hx_dm2`
+- Add `datasets/` to `.gitignore` **before** your first commit, so the data never reach GitHub
+- No Positron? Use Posit Cloud. No assistant installed? Use its web version
 
 ## Your `implementation_plan.md`
 
-Seven headings, one per stage — fill each with what you will actually do.
+Eight headings, one per stage. Fill each with what you will actually do.
 
 ```markdown
-# Analysis Plan: <your study>
-## 1. Read      — sources, formats, provenance
-## 2. Explore   — summaries and checks before modelling
-## 3. Assume    — outcome, exposures, confounders, assumed relationships
-## 4. Apply     — models, and why those models
-## 5. Assess    — diagnostics, performance, validity
-## 6. Present   — tables, interpretation, target audience
-## 7. Publish   — repository, licence, where the code goes
+# Analysis Plan: waist circumference and fasting blood sugar
+## 1. Reason    question, population, outcome, explanatory variables
+## 2. Read      file, and which rows and columns to keep
+## 3. Explore   summaries, odd values, missing data
+## 4. Assume    assumptions, and how you will check them
+## 5. Apply     model, and why that model
+## 6. Assess    diagnostics, and what you will do if they fail
+## 7. Present   table, and one sentence of interpretation
+## 8. Publish   what goes on GitHub, and what never does
 ```
 
 ::: {.note}
-Write it in markdown so your assistant can read it as easily as you can.
+Starter prompt: "Here is my Reason and the variable list. Draft an implementation_plan.md with these
+eight headings. Do not write R code yet."
 :::

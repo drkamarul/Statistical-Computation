@@ -1,36 +1,34 @@
 ## Five Key Takeaways
 
 ::: {.takeaway}
-**1. The workflow comes first.** REAAAPP gives every analysis the same seven
-named stages, so nothing gets skipped under pressure.
+**1. Reason comes first.** If you cannot write it in one sentence, do not open R yet.
 :::
 
 ::: {.takeaway}
-**2. Explore is not optional.** Most analysis failures are visible in the data
+**2. The workflow keeps you honest.** RREAAAPP gives every analysis the same
+eight stages, so nothing gets skipped under pressure.
+:::
+
+::: {.takeaway}
+**3. Explore is not optional.** Most analysis failures are visible in the data
 before any model is fitted.
 :::
 
 ::: {.takeaway}
-**3. AI accelerates each stage; it does not replace your judgement.** You stay
-accountable for every number you publish.
+**4. AI speeds up each stage; it does not replace your judgement.** Verify
+everything it gives you.
 :::
 
 ::: {.takeaway}
-**4. Verify everything the assistant gives you.** Unverified code costs more
-time than it saves.
-:::
-
-::: {.takeaway}
-**5. Publishing is part of the analysis.** Code and data in a repository is
-what makes the work checkable.
+**5. Publishing is part of the analysis.** Code on GitHub makes the work
+checkable; data are shared only when ethics approval allows.
 :::
 
 ## Thank You
 
 - **Email:** drki.musa@gmail.com
 - **Web:** myanalytics.com.my
-- **Slides:** https://drkamarul.github.io/Smart_Data_Analysis/
-- **Source:** https://github.com/drkamarul/Smart_Data_Analysis
+- **Source:** https://github.com/drkamarul/Statistical-Computation
 
 ::: {.note}
 Questions?
@@ -38,16 +36,16 @@ Questions?
 
 ## References — Workflow
 
-- Musa KI. *Data Analysis Workflow.* Universiti Sains Malaysia.
-- Musa KI. *Smart Data Analysis in Medical and Health Research.*
+- Musa KI. *The RREAAAPP Data Analysis Workflow* (Topic B). Smart Data Analysis in Health and Medicine workshop, 2026.
+- Musa KI. *Data Analysis Workflow* and *Smart Data Analysis in Medical and Health Research.* Universiti Sains Malaysia.
 - Lang TA, Altman DG. *SAMPL Guidelines for Statistical Reporting.* EQUATOR Network.
 - Wasserstein RL, Lazar NA. The ASA's statement on p-values. *Am Stat.* 2016;70(2):129–33.
 - Musa KI, Wan Mansor WN, Tengku Hanis TM. *Data Analysis in Medicine and Health Using R.* CRC Press.
 
 ## References — AI Assistants
 
-- Google. *Gemini Assistant* — <https://gemini.google/assistant/>
-- Anthropic. *Claude: Product Overview* — <https://claude.com/product/overview>
-- Anthropic. *Managed Agents: Data Analyst Agent* — <https://platform.claude.com/cookbook/managed-agents-data-analyst-agent>
-- OpenAI. *AI for Data Science and Analytics* — <https://chatgpt.com/business/ai-for-data-science-analytics/>
-- Google. *Antigravity* — <https://antigravity.google/>
+- Google. *Gemini Assistant* <https://gemini.google/assistant/> · *Antigravity* <https://antigravity.google/>
+- Anthropic. *Claude* <https://claude.com/product/overview> · *Claude Code* <https://code.claude.com/docs/en/overview>
+- Anthropic. *Managed Agents: Data Analyst Agent* <https://platform.claude.com/cookbook/managed-agents-data-analyst-agent>
+- OpenAI. *AI for Data Science and Analytics* <https://chatgpt.com/business/ai-for-data-science-analytics/>
+- Model line-ups, checked 14 October 2026: <https://ai.google.dev/gemini-api/docs/models> · <https://platform.claude.com/docs/en/about-claude/models/overview> · <https://developers.openai.com/api/docs/models>

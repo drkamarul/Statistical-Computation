@@ -1,58 +1,121 @@
 # CLAUDE.md
 
-Working rules for this repository.
+Working rules for this repository. `AGENTS.md` carries the same rules for other
+AI agents; keep the two in sync whenever either changes.
 
 ## What this is
 
 Slide deck for the lecture *Statistical Computation: Integrating Data Analysis
-Workflow and AI Assistants*, for postgraduate medical and health researchers at
-Universiti Sains Malaysia. Quarto revealjs, published to GitHub Pages.
+Workflow and AI Assistants*, for postgraduate public health students at
+Universiti Sains Malaysia. A normal Quarto revealjs slide deck,
+`statistical-computation.qmd`, rendered locally to one self-contained
+`statistical-computation.html`. It is not a website: no `index.html`, no
+Quarto website or project output folder, no hosting.
+
+**Audience:** minimal maths, no previous R experience, no previous GitHub
+experience. Write for that reader: plain words, one idea per bullet, every
+term explained the first time it appears.
+
+**Author:** Kamarul Imran Musa, website https://myanalytics.com.my
+
+## Learning objectives
+
+At the end of the lecture, students will be able to:
+
+1. Install the Positron IDE.
+2. Register a GitHub account and create a repository.
+3. Understand the RREAAAPP workflow.
+4. Integrate an AI assistant into the RREAAAPP workflow.
+5. Create an end to end data analysis plan, from reading data to publishing
+   results and code to GitHub.
 
 ## The workflow being taught
 
-**REAAAPP** — seven stages: Read, Explore, Assume, Apply, Assess, Present,
-Publish. Stage 4 is **Apply**, never "Analyse". Never write "REAPPP" and never
-reduce it to six stages.
+**RREAAAPP**: eight stages. Reason, Read, Explore, Assume, Apply, Assess,
+Present, Publish.
+
+- The first R, **Reason**, is new in the 2026 version. Reason means knowing
+  exactly why you analyse before opening R: research question, study
+  population, outcome, explanatory variables, and which data fit the question.
+- Stage 5 is **Apply**, never "Analyse".
+- Never write "REAAAPP", "REAPPP", or any seven or six stage version. Any
+  leftover "REAAAPP" in the brief or old docs is a typo for RREAAAPP.
+- Each stage is taught with its **goal**, **knowledge required** and **skill
+  required**.
 
 ## Hard rules for slide content
 
-1. Maximum **5 top-level bullets** per slide, TOTAL — including two-column
+1. Maximum **5 top-level bullets** per slide, TOTAL, including two-column
    layouts. A knowledge/skill or pros/cons slide splits 3 + 2, never 3 + 3.
    `scripts/check_slides.R` only counts flush-left `- ` bullets; it cannot see
    indented or nested ones. That is a limitation of its regex, not permission
-   to hide a sixth point one level down. The cap is the lecture's design
-   intent — do not build busy slides around the linter's blind spot.
+   to hide a sixth point one level down. Do not build crowded slides around
+   the linter's blind spot.
 2. Slide budget is fixed: Part 1 = 25, Part 2 = 25, Part 3 = 3, appendix = 4.
-3. **No figures, plots, diagrams-as-images, or screenshots.** Structure comes
-   from CSS classes, Quarto columns and markdown tables.
-4. **Code fences must never be executable.** Write all R and shell code as
-   plain ` ```r ` / ` ```bash ` fences — never ` ```{r} `. An executable chunk
-   invokes the knitr engine, which needs R. `.github/workflows/publish.yml`
-   installs only Quarto in CI, deliberately, because nothing in the deck
-   executes; one executable chunk silently breaks publishing.
-5. **Do not cite sources from slides.** `_quarto.yml` sets both
+3. **No figures or plots of our own making**, and no diagrams-as-images.
+   Structure comes from CSS classes, Quarto columns and markdown tables.
+4. **Screenshots of real software are allowed, maximum 6 in the whole deck.**
+   Only of real products the lecture teaches (Google Antigravity 2.0, Claude
+   Code, Positron, GitHub). Capture them with computer-use, save as PNG or JPEG under
+   `images/screenshots/`, give each meaningful alt text, and never capture
+   personal data, tokens, email addresses or other people's information on
+   screen. Part 2 must include a screenshot of Google Antigravity 2.0.
+5. **Code fences must never be executable.** Write all R and shell code as
+   plain ` ```r ` / ` ```bash ` fences, never ` ```{r} `. Nothing in the deck
+   runs, so rendering needs only Quarto and never R. An executable chunk
+   invokes the knitr engine, which needs R and the packages, and makes every
+   render depend on them.
+6. **Do not cite sources from slides.** The deck YAML sets both
    `bibliography: references.bib` and `suppress-bibliography: true`, so an
-   `[@key]` citation renders as a dead parenthetical like
-   "(Google, n.d.-a)" — author restated, no date, no link. The two reference
-   slides at the end of `_appendix.qmd` are hand-written lists ending in real
-   URLs; edit those directly instead. `references.bib` stays as the
-   machine-readable provenance record, including honest notes on source URLs
-   that failed to fetch — it is not wired to any slide.
-6. Part 2 facts about AI products go stale fast. Re-verify by web search
+   `[@key]` citation renders as a dead parenthetical. The two reference slides
+   at the end of `_appendix.qmd` are hand-written lists ending in real URLs;
+   edit those directly. `references.bib` stays as the machine-readable
+   provenance record, not wired to any slide.
+7. Part 2 facts about AI products go stale fast. Re-verify by web search
    before editing, and update the `note = {Accessed ...}` field in
    `references.bib`.
+8. **No dataset is committed.** The Part 3 hands-on uses the MSSM fasting
+   blood sugar workshop data (`datasets/mssm_fbs_workshop.xlsx`), distributed
+   to students separately. `datasets/` is gitignored; the repo is public.
+
+## Slide structure
+
+Part 1 (RREAAAPP): divider, why a workflow, RREAAAPP at a glance, how each
+stage is presented, set up Positron, set up GitHub, then a two-slide pair per
+stage for all eight stages, then reproducibility, where workflows break down,
+recap.
+
+Part 2 (AI assistants): providers (Google, Anthropic, OpenAI), frontier and
+open models, the three platforms (web, IDE, CLI) with pros and cons, worked
+examples **Google Antigravity 2.0** and **Claude Code**, best practice for data
+analysis with an assistant.
+
+Part 3 (hands-on, 3 slides): a data analysis plan that integrates RREAAAPP and
+the student's own AI assistant, using the MSSM FBS data. Must be doable in
+**20 minutes**.
+
+Appendix: five key summaries, thank you, two reference slides.
+
+`docs/superpowers/specs/2026-10-14-rreaaapp-revision-design.md` holds the
+slide by slide layout.
 
 ## File map
 
-- `index.qmd` — title slide plus four includes. No slide content of its own.
+- `statistical-computation.qmd`: the deck. YAML (title, author, all revealjs
+  options, `embed-resources: true`) plus four includes. No slide content of its
+  own. There is no `_quarto.yml` and no `index.qmd`.
 - `_part1-workflow.qmd`, `_part2-ai-assistants.qmd`, `_part3-hands-on.qmd`,
-  `_appendix.qmd` — the content. The `_` prefix stops Quarto rendering them
+  `_appendix.qmd`: the content. The `_` prefix stops Quarto rendering them
   standalone.
-- `styles/academic.scss` — all theme variables and classes.
-- `scripts/check_slides.R` — the budget and five-point linter.
-- `references/` — source PDFs.
-- `references.bib` — provenance record only; not cited from slides.
-- `docs/superpowers/specs/` — the design spec.
+- `styles/academic.scss`: all theme variables and classes. Keep it minimal.
+- `images/screenshots/`: the only images allowed in the deck (max 6).
+- `scripts/check_slides.R`: budget, five-point, screenshot and acronym linter.
+- `references/`: source material (two PDFs and `02_rreaaapp_workflow.html`,
+  the Topic B RREAAAPP deck that defines Reason).
+- `references.bib`: provenance record only; not cited from slides.
+- `implementation_plan.md`: the current plan. Plan first, then build.
+- `About_This_Project.md`: the author's brief. Source of truth for intent.
+- `docs/superpowers/specs/`: design specs.
 
 ## Theme classes
 
@@ -63,18 +126,30 @@ reduce it to six stages.
 Palette: ink `#1A1A1A`, paper `#FDFDFB`, accent `#2C4A63`, muted `#6B7280`,
 rule `#D8D4CC`.
 
+## Working process
+
+- Always plan first: update `implementation_plan.md` before changing slides,
+  and ask the author questions until the intent is clear.
+- Use the `quarto-skill` before creating, editing or rendering any `.qmd`.
+- Update this file, `AGENTS.md` and `implementation_plan.md` whenever a rule
+  or decision changes.
+
 ## Before every commit
 
 ```bash
 Rscript scripts/check_slides.R   # must exit 0
-quarto render                    # must build clean
+quarto render statistical-computation.qmd   # must build clean
 ```
 
-Never raise `MAX_BULLETS` or a budget number to make the linter pass. Cut the
-content instead — the limits are the lecture's design, not an obstacle.
+Never raise `MAX_BULLETS`, `MAX_SCREENSHOTS` or a budget number to make the
+linter pass. Cut the content instead; the limits are the lecture's design, not
+an obstacle.
 
 ## Publishing
 
-Push to `main`; `.github/workflows/publish.yml` renders and deploys to
-https://drkamarul.github.io/Smart_Data_Analysis/. CI installs only Quarto, no
-R — see rule 4 above. Do not commit `_site/`.
+Remote: https://github.com/drkamarul/Statistical-Computation.git, branch
+`main`. There is no CI, no GitHub Pages and no web hosting. The author renders
+locally and presents or shares `statistical-computation.html` as a file.
+
+The older https://github.com/drkamarul/Smart_Data_Analysis repo is kept as an
+archive and is never pushed to again. Do not commit the rendered `.html`, `*_files/` or `datasets/`.

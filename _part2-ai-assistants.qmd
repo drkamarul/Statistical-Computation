@@ -1,18 +1,6 @@
 ## Part 2 — AI Assistants {background-color="#1A1A1A"}
 
-Providers · Models · Web, IDE, CLI · Best practice
-
-## Before AI Assistants
-
-::: {.goal}
-The old loop was search, adapt, wait — and the waiting was the expensive part.
-:::
-
-- You searched Google for an error message and hoped someone had met it before
-- You read a book chapter written for a different dataset and an older version of R
-- Stack Overflow answered eventually, and sometimes told you the question was wrong
-- The colleague who knew the answer was in a meeting until Thursday
-- Hours passed between having a question and having a working line of code
+Providers · Models · Web, IDE, CLI · Antigravity 2.0 and Claude Code · Best practice
 
 ## What an AI Assistant Actually Is
 
@@ -20,11 +8,11 @@ The old loop was search, adapt, wait — and the waiting was the expensive part.
 A large language model, plus an interface that lets it read your problem and write you code.
 :::
 
-- It predicts text, so it produces plausible code — plausible is not the same as correct
-- It has no access to your data unless you give it access
+- It predicts text, so it writes plausible code; plausible is not the same as correct
+- It cannot see your data unless you give it access
 - It answers immediately, at any hour, and never tires of the same question
-- It is strongest where the task is well specified and the idiom is common
-- It is weakest where your data are unusual and your intent is vague
+- It is strongest when the task is clear and the R code is common
+- It is weakest when your data are unusual and your question is vague
 
 ::: {.note}
 Nothing it writes becomes true because it wrote it. You still run it, and you still check it.
@@ -33,7 +21,7 @@ Nothing it writes becomes true because it wrote it. You still run it, and you st
 ## Three Providers That Matter
 
 ::: {.goal}
-Three companies train the models that most health researchers will actually touch.
+Three companies make the models most health researchers will actually use.
 :::
 
 | Provider | Model family | Where you meet it |
@@ -43,109 +31,108 @@ Three companies train the models that most health researchers will actually touc
 | **OpenAI** | GPT | ChatGPT · OpenAI API |
 
 ::: {.note}
-Model names turn over every few months; the three names in the middle column do not. Every model
-name in the next six slides was checked against provider documentation on **16 August 2026** —
-verify before you quote any of them.
+Model names change every few months; the three family names do not. Every model name in the next
+six slides was checked against the providers' own pages on **14 October 2026**. Check again
+before you quote any of them.
 :::
 
 ## Google: the Gemini Family
 
-- **Gemini 3** is the current frontier generation; Gemini 2.5 remains the cheaper fallback
-- **Gemini 3.7 Flash** heads the developer line-up, built for coding and multi-step agent work
-- **Gemini 3.1 Pro** is the large-context Pro model, still labelled preview
-- **Flash-Lite** tiers exist for high-volume work where cost matters more than depth
-- The Gemini app is the consumer surface — files, Deep Research, Canvas, Drive
+- **Gemini 4 Argon** is Google's newest and most capable model
+- **Gemini 3.8 Flash** is the newest Flash model, recommended for most new projects
+- **Gemini 3.5 Flash-Lite** is the fastest, for high volume work at low cost
+- **Gemini 3.1 Pro** is still available, in preview
+- The **Gemini app** is the everyday assistant; **Antigravity** is the platform for building
 
 ## Anthropic: the Claude Family
 
-- Named tiers, not numbers: **Opus** the flagship, **Sonnet** the workhorse, **Haiku** the fastest
-- **Claude Opus 5** is the current Opus; **Claude Sonnet 5** and **Claude Haiku 4.5** sit below it
-- **Claude Fable 5** sits above Opus for the hardest long-horizon work, at a higher price
-- Surfaces: claude.ai on web, desktop and mobile, plus Claude Code in the terminal
-- The API documents a managed data-analyst agent: CSV in, HTML report out
+- Named tiers: **Fable** for the hardest work, **Opus** the flagship, **Sonnet** fast and capable, **Haiku** the fastest
+- Current models: **Fable 5.1 · Opus 5.5 · Sonnet 5.5 · Haiku 5.5**
+- Anthropic suggests starting with **Opus 5.5** for most work
+- Where you meet it: **claude.ai** (web, desktop, mobile) and **Claude Code**
+- Anthropic's cookbook shows a data analyst agent: a CSV goes in, an HTML report comes out
 
 ## OpenAI: the GPT Family
 
-- **GPT-5.6** is the current generation, with members named rather than numbered
-- **Sol** is the frontier model, for complex professional and research work
-- **Terra** balances capability against cost; **Luna** is the cheapest, for high volume
-- **GPT-5.5**, the April 2026 flagship, is still available and still competent
-- ChatGPT is the assistant surface; the same models are sold through the API
+- **GPT-6** is the current generation, with members named rather than numbered
+- **GPT-6 Astra** is the flagship, for complex reasoning and coding
+- **GPT-6.1 Sol** balances capability against cost
+- **GPT-6 Luna** is the cheapest, for high volume work
+- **ChatGPT** is the assistant; the same models are sold through the API
 
 ## What "Frontier Model" Means
 
 ::: {.goal}
-Frontier means the most capable model a company has — kept closed, and rented as a service.
+Frontier means the most capable model a company has: kept closed, and rented as a service.
 :::
 
-- The weights stay with the provider; you rent access through an app or an API
-- You pay per token — roughly, per word in and per word out
-- New capability appears at the frontier first and reaches everything else later
-- Every prompt leaves your machine, which is why confidentiality is not an optional slide
-- Versions turn over in months, so record which model produced your results
+- The model stays with the company; you rent access through an app or an API
+- You pay per token, roughly per word you send and per word you get back
+- New abilities appear in frontier models first
+- Every prompt leaves your computer, which is why the confidentiality slide matters
+- Models change every few months, so write down which model produced your results
 
 ## Frontier Models Today
 
-| Provider | Current generation | Models in the line-up |
+| Provider | Newest | Models in the line-up |
 |---|---|---|
-| **Google** | Gemini 3 | 3.7 Flash · 3.1 Pro *(preview)* · 3.5 Flash-Lite |
-| **Anthropic** | Claude 5 | Fable 5 · Opus 5 · Sonnet 5 · Haiku 4.5 |
-| **OpenAI** | GPT-5.6 | Sol · Terra · Luna |
+| **Google** | Gemini 4 | 4 Argon · 3.8 Flash · 3.5 Flash-Lite · 3.1 Pro *(preview)* |
+| **Anthropic** | Claude 5 | Fable 5.1 · Opus 5.5 · Sonnet 5.5 · Haiku 5.5 |
+| **OpenAI** | GPT-6 | Astra · 6.1 Sol · Luna |
 
 ::: {.note}
-Generations and line-ups as documented on 16 August 2026. Assume this table is stale within a
-semester.
+As listed on the providers' own pages on 14 October 2026. Expect this table to be out of date
+within a semester.
 :::
 
 ## Open-Weight Models
 
 ::: {.goal}
-Open weights mean you can download the model and run it on hardware you control.
+Open weights mean you can download the model and run it on a computer you control.
 :::
 
-- **Llama 4** from Meta, released under Meta's own community licence
-- **Qwen 3.5** and **Qwen 3.8** from Alibaba, and **Gemma 4** from Google — both Apache 2.0
-- **DeepSeek V4** and **Mistral** (Medium 3.5, Small 3.2) fill the mid and large range
-- **gpt-oss**, at 20B and 120B parameters, is OpenAI's open-weight release, Apache 2.0
-- Runners such as Ollama make a good laptop or a department server enough to start
+- **Gemma 4** (Google) and **gpt-oss** (OpenAI): Apache 2.0 licence, small versions run on one good computer
+- **Qwen** (Alibaba) and **DeepSeek V4** (MIT licence) are near the top of many open rankings
+- **Llama 4** (Meta) uses Meta's own community licence
+- New leaders appear every few months; always read the licence before you use one
+- Tools such as **Ollama** make a laptop or a department server enough to start
 
 ## Frontier vs Open: the Trade-Off
 
 | | Frontier | Open-weight |
 |---|---|---|
-| **Cost** | Per token; no hardware to buy | Weights are free; your hardware and your time are not |
-| **Privacy** | Data leaves your machine | Data can stay on the machine |
-| **Control** | The model can change under you | Pin a version and keep it indefinitely |
+| **Cost** | Pay per token; no hardware to buy | Model is free; your hardware and time are not |
+| **Privacy** | Data leave your computer | Data can stay on your computer |
+| **Control** | The model can change under you | Keep one version for as long as you need |
 | **Capability** | Highest available | Close behind, and the gap keeps narrowing |
 
 ::: {.note}
 For identifiable patient data, the privacy row often settles the question on its own.
 :::
 
-## Health Data: the Confidentiality Question {.smaller}
+## Health Data: the Confidentiality Question
 
 ::: {.goal}
-Pasting a patient dataset into a chat box is a cross-border transfer of personal data, whether or
-not you thought of it that way.
+Pasting patient data into a chat box sends them to a company's servers, often in another country.
 :::
 
-- Consumer chat and paid API differ in retention/training defaults; figures are Anthropic's only — verify your vendor's terms
-- Anthropic: content not used to train models; API data deleted within **30 days**; zero-retention is negotiated, not a checkbox
-- **HIPAA-ready API access** via self-serve BAA in Console — API only, excludes Claude Code, cannot be switched off once enabled
-- Malaysia's PDPA 2024 dropped the s.129 whitelist: transfers abroad need equivalent protection, breach notice, a DPO, Guidelines 03/2025
-- Safe default: de-identify, or send only column names, types and a synthetic sample — you want code back, not conclusions
+- Consumer plans may use your chats for training, depending on a setting; find that setting
+- Business and API plans usually have stricter terms; read your vendor's terms
+- Malaysia's PDPA, amended in 2024, governs sending personal data abroad
+- Your ethics approval may forbid it even when the law allows it
+- Safe default: de-identify, or share only column names, types and a made-up sample
 
 ## Three Places to Use an Assistant
 
 ::: {.goal}
-The same model behaves like three different tools depending on where you meet it.
+The same model behaves like three different tools, depending on where you use it.
 :::
 
-- **Web** — a browser tab; you paste in and you copy out
-- **IDE** — inside the editor; it can read the project you already have open
-- **CLI** — in the terminal; it can read, write and run inside your project directory
-- The further along that list you go, the more the assistant can do without you
-- The further along that list you go, the more carefully you must supervise it
+- **Web**: a browser tab; you paste in and copy out
+- **IDE**: inside the program where you write code; it can read your open project
+- **CLI**: in the terminal; it can read, write and run files in your project folder
+- The further down this list, the more the assistant can do without you
+- The further down this list, the more carefully you must supervise it
 
 ## Web: How It Works
 
@@ -153,11 +140,11 @@ The same model behaves like three different tools depending on where you meet it
 You bring the problem to a browser tab; the assistant never sees your project.
 :::
 
-- Describe the problem, paste a data sample, read the answer back
-- Copy the generated code into your IDE and run it there
-- Refine by conversation rather than by re-prompting from scratch
-- Examples: the Gemini app, claude.ai, ChatGPT — all three behave the same way here
-- Nothing is installed, so this is where everyone should start
+- Describe the problem, paste a small data sample, read the answer
+- Copy the code into Positron and run it there
+- Improve it by conversation instead of starting again
+- Examples: the **Gemini app**, **claude.ai**, **ChatGPT**
+- Nothing to install, so this is where everyone should start
 
 ## Web: Pros and Cons
 
@@ -175,8 +162,8 @@ You bring the problem to a browser tab; the assistant never sees your project.
 ::: {.ks}
 [Limits]{.ks-label}
 
-- Manual copy-paste in both directions
-- The assistant cannot see your files, so you manage context by hand
+- Copy and paste in both directions
+- It cannot see your files, so you supply all the context
 :::
 :::
 ::::
@@ -184,14 +171,14 @@ You bring the problem to a browser tab; the assistant never sees your project.
 ## IDE: How It Works
 
 ::: {.goal}
-The assistant lives inside your editor and can see the project you already have open.
+The assistant lives inside your code editor and can see the project you have open.
 :::
 
-- It reads the files in your workspace, so you stop pasting context by hand
-- It proposes edits in place, which you accept or reject like a code review
-- Example: **Positron** with **Posit Assistant**, which also sees your loaded data and plots
-- Example: the **Google Antigravity** IDE, which manages several agents at once
-- You still run the code, and you still read the diff before you accept it
+- It reads the files in your project, so you stop pasting context by hand
+- It suggests edits in place, which you accept or reject one by one
+- Example: **Posit Assistant** in Positron, which also sees your loaded data and plots
+- Examples: the **Antigravity IDE**, and **Claude Code** in VS Code or JetBrains
+- You still run the code, and you still read every change before you accept it
 
 ## IDE: Pros and Cons
 
@@ -200,8 +187,8 @@ The assistant lives inside your editor and can see the project you already have 
 ::: {.ks}
 [Strengths]{.ks-label}
 
-- It sees your data, your plots and your session
-- Edits arrive as a reviewable diff
+- It sees your files, data and plots
+- Changes arrive as edits you can review
 - One window for writing, running and asking
 :::
 :::
@@ -209,8 +196,8 @@ The assistant lives inside your editor and can see the project you already have 
 ::: {.ks}
 [Limits]{.ks-label}
 
-- Installation, configuration and an API key
-- Easy to accept a diff you did not read
+- Needs installing, setting up, and an account or API key
+- Easy to accept a change you did not read
 :::
 :::
 ::::
@@ -218,14 +205,14 @@ The assistant lives inside your editor and can see the project you already have 
 ## CLI: How It Works
 
 ::: {.goal}
-The assistant runs in your terminal, inside the project directory, and can act on files.
+The assistant runs in your terminal, inside your project folder, and can act on files.
 :::
 
-- You start it in the folder; the folder is the context
-- It can read files, write files, run scripts and read the errors back
-- Examples: **Claude Code**, and the **Antigravity CLI** rebuilt in Go for Antigravity 2.0
-- It suits multi-file, multi-step work — a whole analysis, not a single function
-- Permission prompts are the safety mechanism, so do not click straight through them
+- You start it in the folder; the folder is what it works on
+- It can read files, write files, run scripts and read the errors
+- Examples: **Claude Code** (type `claude`) and the **Antigravity CLI**
+- It suits work that spans many files and many steps: a whole analysis
+- It asks permission before acting; read each request, do not click straight through
 
 ## CLI: Pros and Cons
 
@@ -236,15 +223,15 @@ The assistant runs in your terminal, inside the project directory, and can act o
 
 - Handles work that spans many files
 - Runs the code and reads its own errors
-- Fits naturally with Git and version control
+- Works naturally with Git and GitHub
 :::
 :::
 ::: {.column width="50%"}
 ::: {.ks}
 [Limits]{.ks-label}
 
-- The most autonomy, so the most supervision
-- Least forgiving of a vague instruction
+- The most independence, so it needs the most supervision
+- A vague instruction can lead to many wrong changes
 :::
 :::
 ::::
@@ -252,90 +239,106 @@ The assistant runs in your terminal, inside the project directory, and can act o
 ## Google Antigravity 2.0
 
 ::: {.goal}
-Google's agentic development platform, announced in its 2.0 form at I/O 2026.
+Google's agent platform: one place to run several AI agents on your projects.
 :::
 
-- Three surfaces ship together: a desktop **IDE**, a terminal **CLI**, and a Python **SDK**
-- The IDE is a command centre for running several local agents in parallel
-- Multi-model: Gemini by default, with Anthropic and open-weight models selectable
-- Free of charge for individual developers, on macOS, Windows and Linux
-- Scheduled background tasks mean an agent can work while nobody is watching it
+:::: {.columns}
+::: {.column width="40%"}
+- Four ways in: a desktop **app**, an **IDE**, a **CLI** and a Python **SDK**
+- The app is a command centre for running several agents side by side
+- Runs Gemini models, including Gemini 4 Argon; free for individuals
+:::
+::: {.column width="60%"}
+![](images/screenshots/03-antigravity.jpg){fig-alt="The Google Antigravity 2.0 app with a project selected, Gemini 3.8 Flash chosen as the model, and a RREAAAPP planning prompt typed into the box." width="100%"}
+:::
+::::
+
+## Claude Code
+
+::: {.goal}
+Anthropic's coding agent: it reads your project, edits files and runs commands.
+:::
+
+- Runs in the terminal, in VS Code and JetBrains, in a desktop app, and on the web
+- Reads a `CLAUDE.md` (or `AGENTS.md`) file of project rules every time it starts
+- Needs a paid Claude plan or an Anthropic API account
 
 ## Web, IDE, CLI Compared
 
 | | Web | IDE | CLI |
 |---|---|---|---|
-| **Setup cost** | None | Install an editor | Install and authenticate |
-| **Sees your files** | No — you paste | Yes, the open workspace | Yes, the whole directory |
+| **Setup** | None | Install an editor | Install and sign in |
+| **Sees your files** | No, you paste | Yes, the open project | Yes, the whole folder |
 | **Runs your code** | No | You run it | Yes, with permission |
-| **Best for** | Learning, one-off questions | Everyday analysis | Multi-file, multi-step work |
+| **Best for** | Learning, one-off questions | Everyday analysis | Many files, many steps |
 
 ::: {.note}
-Start on the web. Move to the IDE when copy-paste gets tiring. Move to the CLI when the task spans
-files.
+Start on the web. Move to the IDE when copy and paste gets tiring. Move to the CLI when the task
+spans many files.
 :::
 
 ## Best Practice: Plan Before You Prompt
 
 ::: {.goal}
-Write the implementation plan first — the plan is the prompt.
+Write the plan first; the plan is the prompt.
 :::
 
 - Say what the data are, what the outcome is, and which model you intend to fit
-- Give it the data dictionary: variable names, types, units, missing-value codes
-- Give it reference code that already works in your group, so the output matches your house style
+- Give it the data dictionary: variable names, types, units, missing value codes
+- Give it R code that already works in your group, so its answer matches your style
 
 ```r
-# A plan you can hand over, stage by stage
-# 1. Read    data-raw/cohort_2026.csv; "NA" and "" are missing
-# 2. Explore skimr summary; check age 18-90, sbp 60-250
-# 3. Assume  outcome binary; exposure = treatment; confounders = age, sex
-# 4. Apply   glm(outcome ~ treatment + age + sex, family = binomial)
-# 5. Assess  performance::check_model(); confusion matrix if classification
-# 6. Present gtsummary table; report the estimate and 95% CI, not p alone
-# 7. Publish push to GitHub; render the Quarto report; deposit the data
+# A RREAAAPP plan you can hand over, stage by stage
+# 1. Reason   adults without diabetes; FBS ~ waist + age + sex
+# 2. Read     datasets/mssm_fbs_workshop.xlsx; keep hx_dm2 == "no"
+# 3. Explore  histogram of FBS; count values below 3 and missing
+# 4. Assume   straight line (scatter + loess); independent people
+# 5. Apply    lm(fasting_blood_sugar ~ waist_cm + age + malefemale)
+# 6. Assess   residuals vs fitted; R-squared
+# 7. Present  tbl_regression(); one sentence of interpretation
+# 8. Publish  Quarto report and code to GitHub; no data
 ```
 
 ## Best Practice: Verify Everything
 
 ::: {.goal}
-Generated code that runs is not the same as generated code that is right.
+Code that runs is not the same as code that is right.
 :::
 
 - Run it, then check the numbers against a result you already trust
-- Check the n at every step — silent row loss is the most common quiet failure
-- Read every line you are about to publish; if you cannot explain it, do not ship it
+- Check the number of rows at every step; quietly losing people is the most common error
+- Read every line before you publish it; if you cannot explain it, do not use it
 
 ```r
-nrow(dat_raw)
-nrow(dat_clean)                              # did a join or filter drop people?
-table(dat_clean$outcome, useNA = "ifany")    # did the recode invent a category?
+nrow(fbs_raw)
+nrow(fbs)                                 # did a filter drop people?
+table(fbs$malefemale, useNA = "ifany")    # did a recode invent a category?
 ```
 
 ## Best Practice: Protect the Data
 
 ::: {.goal}
-De-identify before you share, and know where the request actually goes.
+De-identify before you share, and know where the data actually go.
 :::
 
-- Strip names, IC numbers, addresses, admission dates and free-text notes before sharing anything
-- Prefer structure over content: column names, types, ranges and a synthetic sample
-- Know your surface — consumer chat and a paid API carry different retention defaults
-- Check institutional policy and your ethics approval before real data leaves the building
-- If that answer is unclear, run an open-weight model locally and the question does not arise
+- Remove names, IC numbers, addresses, dates and free text before sharing anything
+- Share structure, not content: column names, types, ranges and a made-up sample
+- Know your plan: consumer chat and paid API have different data rules
+- Check your institution's policy and your ethics approval first
+- If in doubt, run an open-weight model on your own computer instead
 
 ## Best Practice: You Remain the Analyst
 
 ::: {.goal}
-The assistant accelerates the analysis. It does not own it — your name is on the paper.
+The assistant speeds up the analysis. It does not own it; your name is on the paper.
 :::
 
 - Vague prompts get vague code: name the variables, the model and the output you want
-- Providing no resources — no data dictionary, no reference code — wastes the tool
+- Give it resources: the data dictionary, your Reason, working example code
 - Planning too little costs far more time than planning would have taken
-- Not verifying the output means publishing its mistakes under your name
-- Letting AI be your master is the last trap; the judgement stays with you
+- Not checking the output means publishing its mistakes under your name
+- Do not let the AI become the master; the judgement stays with you
 
 ::: {.takeaway}
-REAAAPP gives the structure, the assistant gives the speed, your domain expertise gives the quality.
+RREAAAPP gives the structure, the assistant gives the speed, your expertise gives the quality.
 :::

@@ -1,5 +1,6 @@
 #!/usr/bin/env Rscript
-# check_slides.R — enforce the slide budget and the five-point rule.
+# check_slides.R — enforce the slide budget, the five-point rule, the
+# screenshot cap and the RREAAAPP spelling.
 # Base R only, no package dependencies. Run from the project root.
 
 BUDGET <- c(
@@ -9,6 +10,7 @@ BUDGET <- c(
   "_appendix.qmd"            =  4L
 )
 MAX_BULLETS <- 5L
+MAX_SCREENSHOTS <- 6L
 
 # Drop fenced code blocks so that R comments (`# ...`) are never mistaken for
 # slide headings and commented list items are never counted as bullets.
@@ -28,6 +30,14 @@ check_file <- function(path, budget) {
   if (n != budget) {
     problems <- c(problems,
       sprintf("%s: has %d slides, budget is %d", path, n, budget))
+  }
+
+  # The workflow is RREAAAPP (eight stages). A bare REAAAPP is the retired
+  # seven-stage name and must not reappear on a slide.
+  for (k in grep("(?<!R)REAAAPP", lines, perl = TRUE)) {
+    problems <- c(problems,
+      sprintf("%s: '%s' uses REAAAPP -- the workflow is RREAAAPP",
+              path, trimws(lines[k])))
   }
   if (n == 0L) return(problems)
 
@@ -62,11 +72,25 @@ check_file <- function(path, budget) {
 
 problems <- unlist(lapply(names(BUDGET), function(f) check_file(f, BUDGET[[f]])))
 
+# Screenshots of real software are allowed, but only MAX_SCREENSHOTS in the
+# whole deck; own figures and plots are not allowed at all.
+n_img <- sum(vapply(names(BUDGET), function(f) {
+  if (!file.exists(f)) return(0L)
+  lines <- strip_code(readLines(f, warn = FALSE))
+  sum(lengths(regmatches(lines, gregexpr("!\\[", lines))))
+}, integer(1)))
+if (n_img > MAX_SCREENSHOTS) {
+  problems <- c(problems,
+    sprintf("deck has %d images, max is %d screenshots", n_img, MAX_SCREENSHOTS))
+}
+
 if (length(problems)) {
   cat("Slide check FAILED\n")
   cat(paste0("  - ", problems, collapse = "\n"), "\n", sep = "")
   quit(status = 1L)
 }
 
-cat("Slide check passed: 25 / 25 / 3 / 4 slides, no slide over 5 bullets.\n")
+cat(sprintf(paste0("Slide check passed: 25 / 25 / 3 / 4 slides, no slide over 5 bullets, ",
+                   "%d of %d screenshots, RREAAAPP spelling.\n"),
+            n_img, MAX_SCREENSHOTS))
 quit(status = 0L)

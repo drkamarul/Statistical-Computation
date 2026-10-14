@@ -1,53 +1,138 @@
-## Part 1 — The REAAAPP Workflow {background-color="#1A1A1A"}
+## Part 1 — The RREAAAPP Workflow {background-color="#1A1A1A"}
 
-Read · Explore · Assume · Apply · Assess · Present · Publish
+Reason · Read · Explore · Assume · Apply · Assess · Present · Publish
 
 ## Why You Need a Workflow
 
 ::: {.goal}
-Analysis fails more often from missing process than from missing statistics.
+A workflow is a checklist for your thinking, not just for your code.
 :::
 
-- Data arrive bigger, in more formats, and from more centres than before
-- Analyses are more complex, so more places to go quietly wrong
-- Without a named sequence, steps get skipped under time pressure
-- A shared workflow lets a team divide work without losing the thread
-- Reviewers and journals increasingly ask how, not just what
+- Without one, you open the data and "see what happens"
+- Steps get forgotten or skipped when the deadline is close
+- The result is something nobody can check or repeat
+- With RREAAAPP you follow the same eight steps every time
+- Every step is written in code, so anyone can check it and run it again
 
-## REAAAPP at a Glance
+## RREAAAPP at a Glance
 
-| | Stage | What it delivers |
+| | Stage | What it gives you |
 |---|---|---|
-| **R** | Read | Data of known provenance, in your environment |
-| **E** | Explore | Understanding of distribution, missingness, structure |
-| **A** | Assume | An explicit list of what the analysis depends on |
-| **A** | Apply | Fitted models and methods |
-| **A** | Assess | Evidence the model is adequate and valid |
-| **P** | Present | Results an audience can act on |
-| **P** | Publish | Results, data and code others can verify |
+| **R** | Reason | A clear question, population, outcome and variables |
+| **R** | Read | The data in R, with nothing lost or changed |
+| **E** | Explore | A first look: distributions, odd values, missing data |
+| **A** | Assume | A written list of what the analysis depends on |
+| **A** | Apply | A fitted model |
+| **A** | Assess | Evidence that the model is good enough |
+| **P** | Present | A table and a plain language interpretation |
+| **P** | Publish | Code and report that others can check |
+
+::: {.note}
+New this year: the first R, **Reason**. Everything else follows from it.
+:::
 
 ## How Each Stage Is Presented
 
 Every stage in this part gets the same two slides.
 
-- **Goal** — what the stage must achieve before you move on
-- **Knowledge required** — what you need to understand
-- **Skill required** — what you need to be able to do
-- **Tools** — what you do it with
+- **Goal**: what the stage must achieve before you move on
+- **Knowledge required**: what you need to understand
+- **Skill required**: what you need to be able to do
+- **Tools**: the R packages and programs you do it with
 - Learn the shape once, then read any stage quickly
+
+## Set Up: Install Positron
+
+::: {.goal}
+Positron is a free program from Posit where you write and run R code.
+:::
+
+:::: {.columns}
+::: {.column width="42%"}
+- Install **R** first (4.2 or newer) from cran.r-project.org
+- Then install **Positron** from positron.posit.co
+- **File → Open Folder** opens your project
+- **Ctrl + Enter** runs the current line
+- No Positron? **Posit Cloud** runs the same code online
+:::
+::: {.column width="58%"}
+![](images/screenshots/01-positron.jpg){fig-alt="Positron with the fbs-analysis project open: files on the left, an R script in the editor, and the R console, variables and plots panes on the right." width="100%"}
+:::
+::::
+
+## Set Up: GitHub Account and First Repository
+
+::: {.goal}
+GitHub keeps your code online, with a full history of every change.
+:::
+
+:::: {.columns}
+::: {.column width="42%"}
+- Sign up at github.com/signup with an email you will keep
+- Verify your email before anything else
+- Click **+** → **New repository**; name it, e.g. `fbs-analysis`
+- **Private** while you work; Public when you publish
+- Click **Create repository**
+:::
+::: {.column width="58%"}
+![](images/screenshots/02-github-new-repo.jpg){fig-alt="A new, empty GitHub repository page showing the repository address and the commands to push a project to it." width="100%"}
+:::
+::::
+
+## R — Reason: Know Why You Analyse
+
+::: {.goal}
+**Goal:** know exactly why you are analysing, before you open R.
+:::
+
+- **Research question**: what exactly do you want to know?
+- **Study population**: who is it about, and who should be left out?
+- **Outcome**: the main variable you want to explain
+- **Explanatory variables**: what might be related to the outcome
+- **Data**: which dataset, and does it fit this question?
+
+::: {.note}
+If you cannot write your reason in one sentence, do not open R yet.
+:::
+
+## R — Reason: Knowledge and Skill
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.ks}
+[Knowledge required]{.ks-label}
+
+- Outcome versus explanatory variables
+- What your study design can claim: association or cause
+- What each variable means, from the data dictionary
+:::
+:::
+::: {.column width="50%"}
+::: {.ks}
+[Skill required]{.ks-label}
+
+- Write your question in one clear sentence
+- Turn the Reason into decisions: which rows and columns to keep
+:::
+:::
+::::
+
+::: {.note}
+Example: among adults without known diabetes, is a larger waist associated with
+a higher fasting blood sugar, after taking age and sex into account?
+:::
 
 ## R — Read Data
 
 ::: {.goal}
-**Goal:** get the data into R with its provenance, types and missing-value
-conventions intact.
+**Goal:** get the data into R with its types and missing values intact.
 :::
 
-- Sources are offline, cloud, or hybrid — record which
-- Structured formats: CSV, Excel, SPSS, SAS, Stata
-- Unstructured sources need a conversion step you must document
-- Reading is where silent type coercion does its damage
-- Nothing downstream is trustworthy if this step is careless
+- Data come from a file (CSV, Excel, SPSS, Stata) or a database; record where
+- Read the data with code, never by copying and pasting
+- Never edit the raw file; every change happens in your script
+- The Reason decides which rows (`filter()`) and columns (`select()`) you keep
+- Check the number of rows, columns and types straight after reading
 
 ## R — Read: Knowledge and Skill
 
@@ -56,37 +141,36 @@ conventions intact.
 ::: {.ks}
 [Knowledge required]{.ks-label}
 
-- How your source format encodes missing values
-- Variable types and what coercion costs you
-- Where the data came from and who owns it
+- How your file marks missing values
+- Variable types: number, text, category, date
+- Where the data came from and who owns them
 :::
 :::
 ::: {.column width="50%"}
 ::: {.ks}
 [Skill required]{.ks-label}
 
-- Import with `readr`, `haven`, `readxl`
-- Script the import and check types — never edit the raw file
+- Import with `readxl`, `readr` or `haven`, using `here()` for paths
+- Check what you read with `dim()` and `glimpse()`
 :::
 :::
 ::::
 
 ::: {.note}
-Tools: readr · haven · readxl · here
+Tools: readxl · readr · haven · here · janitor
 :::
 
 ## E — Explore Data
 
 ::: {.goal}
-**Goal:** understand distributions, missingness and structure before any model
-is fitted.
+**Goal:** look carefully at the data before you fit any model.
 :::
 
-- Exploration takes two forms: visualisation and tabulation
-- EDA summarises the main characteristics of the data
-- This is the stage most often skipped, and it costs the most
-- Impossible values and implausible ranges surface here or not at all
-- Missingness has a pattern — find out what it is
+- Two ways to look: graphs and summary tables
+- Start with the outcome: its shape, its middle and its spread
+- Impossible or unusual values show up here, or not at all
+- Count the missing values and ask why they are missing
+- Never delete quietly; write down every exclusion and the reason for it
 
 ## E — Explore: Knowledge and Skill
 
@@ -95,17 +179,17 @@ is fitted.
 ::: {.ks}
 [Knowledge required]{.ks-label}
 
-- What EDA is for, and when you have done enough
-- When a graphic beats a table, and when it does not
-- What a missingness pattern implies for the analysis
+- What a histogram, a median and a range tell you
+- When a value is impossible, not just unusual
+- Why missing data can bias your result
 :::
 :::
 ::: {.column width="50%"}
 ::: {.ks}
 [Skill required]{.ks-label}
 
-- Summarise with `skimr` and `gtsummary`, plot with `ggplot2`
-- Read a distribution and spot impossible values
+- Summarise with `gtsummary`, plot with `ggplot2`
+- Record every data decision in your script
 :::
 :::
 ::::
@@ -117,14 +201,14 @@ Tools: ggplot2 · gtsummary · skimr · naniar
 ## A — Assume
 
 ::: {.goal}
-**Goal:** state what the intended analysis depends on, before fitting it.
+**Goal:** state what your analysis depends on, before you fit it.
 :::
 
-- Every statistical test carries underlying assumptions
-- Statistics does not infer valid conclusions from nothing
-- The sample must be representative of the population you claim to describe
-- Name the roles: exposure, confounder, mediator, moderator
-- State the outcome and the relationship you assume it has
+- Every statistical method rests on assumptions
+- Linear regression assumes a roughly straight line relationship
+- It also assumes independent people: no repeats, no family members
+- Name the roles: outcome, exposure, confounder
+- Some checks come before the model; others come after it, in Assess
 
 ## A — Assume: Knowledge and Skill
 
@@ -133,36 +217,36 @@ Tools: ggplot2 · gtsummary · skimr · naniar
 ::: {.ks}
 [Knowledge required]{.ks-label}
 
-- Population versus sample, and what representativeness buys you
-- Exposure, confounder, mediator and moderator are different roles
-- Outcome types: continuous, binary, count, time-to-event
+- Population versus sample
+- Exposure, confounder and outcome are different roles
+- Outcome types: continuous, binary, count, time to event
 :::
 :::
 ::: {.column width="50%"}
 ::: {.ks}
 [Skill required]{.ks-label}
 
-- Draw the assumed relationship before you fit anything
-- Write the assumptions down where a reviewer can read them
+- Draw the relationship you assume before you fit anything
+- Check for a straight line with a scatter plot and a smooth curve
 :::
 :::
 ::::
 
 ::: {.note}
-Tools: dagitty.net · the `dagitty` R package · a whiteboard and a photograph of it
+Tools: ggplot2 (`geom_smooth()`) · dagitty.net · pen and paper
 :::
 
 ## A — Apply Models and Methods
 
 ::: {.goal}
-**Goal:** fit the models and methods the research question actually needs.
+**Goal:** fit the model your Reason actually needs.
 :::
 
-- Statistical analysis covers estimation, hypothesis testing, inference and prediction
-- Decide first whether you want inference or prediction — they are not the same
-- Univariable before multivariable; univariate is not multivariate
-- Machine learning adds supervised, unsupervised and semi-supervised work
-- R is the working environment: a language plus a runtime for all of it
+- The outcome type chooses the model: continuous → linear, binary → logistic
+- Decide first: explain a relationship (inference) or predict (prediction)
+- Start simple, then add explanatory variables
+- `lm()` fits a straight line through the data
+- Do not interpret yet; Assess comes first
 
 ## A — Apply: Knowledge and Skill
 
@@ -171,36 +255,36 @@ Tools: dagitty.net · the `dagitty` R package · a whiteboard and a photograph o
 ::: {.ks}
 [Knowledge required]{.ks-label}
 
-- Estimation, testing, inference and prediction are distinct goals
-- Univariable versus multivariable model building
-- Where statistical learning ends and machine learning begins
+- Which model suits which outcome type
+- Inference versus prediction
+- What an estimate and its 95% confidence interval mean
 :::
 :::
 ::: {.column width="50%"}
 ::: {.ks}
 [Skill required]{.ks-label}
 
-- Fit with `lm`, `glm` and `lme4`, and read the output
-- Keep every model in a script that runs start to finish
+- Fit with `lm()` and `glm()`, read the output with `tidy()`
+- Keep every model in a script that runs from start to finish
 :::
 :::
 ::::
 
 ::: {.note}
-Tools: R · RStudio · Posit Cloud · lm · glm · lme4 · tidymodels
+Tools: R · Positron · lm · glm · broom
 :::
 
 ## A — Assess Results and Models
 
 ::: {.goal}
-**Goal:** show that the model is adequate, and say where the result applies.
+**Goal:** show that the model is good enough, and say where the result applies.
 :::
 
-- Re-check the assumptions against the model you actually fitted
-- Outliers and influential observations are two different problems
-- Performance for continuous outcomes: R-squared and residual behaviour
-- Performance for classification: accuracy, sensitivity, specificity
-- Validity: internal first, then how far the result travels
+- Check the assumptions again, against the model you actually fitted
+- Residual = observed minus predicted; good residuals form a shapeless band around 0
+- Outliers and influential points are two different problems
+- R² tells you how much of the variation the model explains
+- If an assumption fails, say so: treat the result as approximate, or change the model
 
 ## A — Assess: Knowledge and Skill
 
@@ -209,7 +293,7 @@ Tools: R · RStudio · Posit Cloud · lm · glm · lme4 · tidymodels
 ::: {.ks}
 [Knowledge required]{.ks-label}
 
-- What diagnostic plots can and cannot tell you
+- What a residual plot can and cannot tell you
 - The difference between an outlier and an influential point
 - Internal versus external validity
 :::
@@ -218,27 +302,27 @@ Tools: R · RStudio · Posit Cloud · lm · glm · lme4 · tidymodels
 ::: {.ks}
 [Skill required]{.ks-label}
 
-- Read diagnostic output and compute the right performance measure
+- Plot residuals with `augment()` and `ggplot2`
 - Decide when to revise the model and when to stop
 :::
 :::
 ::::
 
 ::: {.note}
-Tools: broom · performance · car · pROC
+Tools: broom · performance · car
 :::
 
 ## P — Present Results
 
 ::: {.goal}
-**Goal:** report the results so that the audience can act on them.
+**Goal:** report the results so a reader can understand and use them.
 :::
 
-- Reporting guidelines exist: SAMPL covers basic statistical reporting
-- The ASA is explicit — no single index should substitute for scientific reasoning
-- Report the estimate and its precision, not the p-value alone
-- Find out what your audience already understands before you simplify
-- Simplifying and convincing are part of the analysis, not an afterthought
+- A table, plus one plain language sentence of interpretation
+- Report the estimate and its 95% CI, not the p value alone
+- Say "associated with", not "causes", unless your design allows it
+- Follow a reporting guideline: SAMPL for statistics, EQUATOR for study designs
+- The ASA statement: a p value alone does not replace scientific reasoning
 
 ## P — Present: Knowledge and Skill
 
@@ -247,8 +331,8 @@ Tools: broom · performance · car · pROC
 ::: {.ks}
 [Knowledge required]{.ks-label}
 
-- The SAMPL guidelines for biomedical journals
-- The ASA statement on p-values and statistical significance
+- The SAMPL guidelines and the ASA statement on p values
+- Association versus causation
 - What your audience already knows and what they need
 :::
 :::
@@ -256,27 +340,27 @@ Tools: broom · performance · car · pROC
 ::: {.ks}
 [Skill required]{.ks-label}
 
-- Build tables with `gtsummary` and `gt`
+- Build tables with `tbl_summary()` and `tbl_regression()`
 - Write an interpretation, not just an estimate
 :::
 :::
 ::::
 
 ::: {.note}
-Tools: gtsummary · gt · flextable · Quarto
+Tools: gtsummary · gt · Quarto
 :::
 
 ## P — Publish Results, Data and Code
 
 ::: {.goal}
-**Goal:** release results, data and code so that others can verify them.
+**Goal:** release your code and results so others can check them.
 :::
 
-- Code belongs in version control in the cloud, not in a folder on your laptop
-- GitHub adds access control, issue tracking and continuous integration to Git
-- Data can be deposited in Zenodo, OSF, Dryad, figshare or a domain repository
-- Results can be published as a site, a report, or a dashboard
-- Shiny turns an analysis into something a clinician can actually use
+- Put the code, tables and interpretation together in a Quarto report
+- Keep the code on GitHub: Git records who changed what, when and why
+- Share data only if ethics approval and the data owner allow it
+- Never publish data that could identify anyone (even age + sex + village)
+- When sharing is allowed, deposit data in Zenodo, OSF or Dryad so it can be cited
 
 ## P — Publish: Knowledge and Skill
 
@@ -285,106 +369,58 @@ Tools: gtsummary · gt · flextable · Quarto
 ::: {.ks}
 [Knowledge required]{.ks-label}
 
-- What version control does that careful file naming does not
-- Repository and licence choices for data
-- What makes a dataset reusable by someone who was not there
+- What version control does that careful file naming cannot
+- Ethics and consent rules for sharing health data
+- Licences for code and for data
 :::
 :::
 ::: {.column width="50%"}
 ::: {.ks}
 [Skill required]{.ks-label}
 
-- Use Git and GitHub for code, results and reports
-- Deposit the data and publish a Quarto site or a Shiny app
+- Commit and push your project to GitHub from Positron
+- Render a Quarto report from your script
 :::
 :::
 ::::
 
 ::: {.note}
-Tools: Git · GitHub · Quarto · Shiny · Zenodo · OSF · Dryad
+Tools: Git · GitHub · Quarto · Zenodo · OSF
 :::
 
 ## Reproducibility Runs Through Every Stage
 
 ::: {.goal}
-Every stage should leave behind an artefact that someone else can rerun.
+Every stage should leave behind something that someone else can run again.
 :::
 
-- The raw file is read-only; every change to it happens in code
-- Relative paths, so the project survives moving between machines
-- Record package versions — results drift when packages change
+- The raw file is read only; every change happens in code
+- Relative paths with `here()`, so the project works on any computer
+- Commit often, with a message that says why
 
 ```r
 library(here)
-library(readr)
+library(readxl)
 
-dat_raw <- read_csv(here("data-raw", "cohort_2026.csv"))
+fbs <- read_excel(here("datasets", "mssm_fbs_workshop.xlsx"))
 ```
-
-## Working in a Team: Git as the Backbone
-
-::: {.goal}
-Analysis by a team means code, results and reports have to move together.
-:::
-
-- Git records who changed what and when, without renamed copies
-- Cloud drives sync files; only a commit records why the change was made
-- Branches let two analysts work without overwriting each other
-
-```bash
-git add analysis/model-fit.R
-git commit -m "Fit adjusted model with centre as random intercept"
-git push
-```
-
-## Reporting Guidelines You Should Know
-
-- **SAMPL** — Statistical Analyses and Methods in the Published Literature
-- **ASA statement on p-values**, *The American Statistician*, 2016
-- **American Heart Association** recommendations for statistical reporting in cardiovascular medicine
-- The EQUATOR Network hosts these alongside the study-design checklists
-- Read the guideline for your design before you write the methods section
-
-## Publishing Data: Credit and Reuse
-
-::: {.goal}
-A deposited dataset is a citable research output in its own right.
-:::
-
-- Credit and recognition for work that a paper alone does not show
-- Discoverability — indexed repositories reach readers your paper will not
-- Reusability and accessibility for the next research question
-- Zenodo, OSF, Dryad and figshare; GEO and GenBank for domain data
-
-## Rate Yourself at Each Stage
-
-::: {.goal}
-Ask two questions at every stage: am I using the right tools, and how good am I
-with them?
-:::
-
-- **Novice** — you can follow a worked example
-- **Intermediate** — you can adapt it to your own data
-- **Advanced** — you can judge when the method itself is wrong
-- The gaps are rarely uniform; rate yourself stage by stage
-- Where the gap matters, get trained or bring in a collaborator
 
 ## Where Workflows Break Down
 
-- Explore is skipped when the deadline is close, and the errors surface late
+- No clear Reason, so the wrong population or outcome gets analysed
+- Explore is skipped when the deadline is close, and errors surface late
 - Assumptions stay in your head, so nobody can check them
 - Models are fitted but never assessed
-- Analyses are finished but never published, so nothing can be verified
 - No version control, so `final_v3_really_final.R` becomes the archive
 
 ## Part 1 — Recap
 
 ::: {.goal}
-Read · Explore · Assume · Apply · Assess · Present · Publish
+Reason · Read · Explore · Assume · Apply · Assess · Present · Publish
 :::
 
-- Data arrive in many formats and analyses keep getting more complex
-- Use the right tools at each stage, and know how good you are with them
-- Knowledge and skill are different things; each stage needs both
-- Work in a team and leverage other people's expertise
-- Be willing to let go of the old tools
+- Reason first: one sentence before you open R
+- Eight stages, in the same order, every time
+- Each stage needs both knowledge and skill
+- Positron to run R; GitHub to keep and share your code
+- Every step in code, so others can check it and run it again

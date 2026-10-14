@@ -42,7 +42,7 @@ and lives in git history at commit `25e7b74`.
 - [x] Tasks 1 to 5, 7 and 8 done on 2026-10-14 (linter, config, Part 1, Part 2
   facts and edits, Part 3, appendix). Lint passes; render clean; overflow checked
 - [x] Task 6: 3 screenshots (Positron, GitHub, Antigravity); Claude Code text only
-- [ ] Task 9: commit and push (after the author confirms)
+- [x] Task 9: committed 64c6610 and pushed to Statistical-Computation main on 2026-10-14
 
 ---
 

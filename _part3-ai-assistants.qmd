@@ -1,4 +1,4 @@
-## Part 2 — AI Assistants {background-color="#1A1A1A"}
+## Part 3 — AI Assistants {background-color="#1A1A1A"}
 
 Providers · Models · Web, IDE, CLI · Antigravity 2.0 and Claude Code · Best practice
 
@@ -262,6 +262,7 @@ Anthropic's coding agent: it reads your project, edits files and runs commands.
 - Runs in the terminal, in VS Code and JetBrains, in a desktop app, and on the web
 - Reads a `CLAUDE.md` (or `AGENTS.md`) file of project rules every time it starts
 - Needs a paid Claude plan or an Anthropic API account
+- Easiest start: the **Code** tab in Claude Desktop, installed in Part 1
 
 ## Web, IDE, CLI Compared
 

@@ -1,4 +1,4 @@
-## Part 1 — The RREAAAPP Workflow {background-color="#1A1A1A"}
+## Part 2 — The RREAAAPP Workflow {background-color="#1A1A1A"}
 
 Reason · Read · Explore · Assume · Apply · Assess · Present · Publish
 
@@ -9,10 +9,17 @@ A workflow is a checklist for your thinking, not just for your code.
 :::
 
 - Without one, you open the data and "see what happens"
-- Steps get forgotten or skipped when the deadline is close
-- The result is something nobody can check or repeat
-- With RREAAAPP you follow the same eight steps every time
-- Every step is written in code, so anyone can check it and run it again
+- No clear Reason, so the wrong population or outcome gets analysed
+- Steps get skipped when the deadline is close, and errors surface late
+- With RREAAAPP you follow the same eight stages every time
+- Every stage is written in code, so anyone can check it and run it again
+
+::: {.notes}
+Other ways analyses break down without a workflow: assumptions stay in the
+analyst's head so nobody can check them; models are fitted but never
+assessed; and without version control a file called final_v3_really_final.R
+becomes the archive.
+:::
 
 ## RREAAAPP at a Glance
 
@@ -28,74 +35,15 @@ A workflow is a checklist for your thinking, not just for your code.
 | **P** | Publish | Code and report that others can check |
 
 ::: {.note}
-New this year: the first R, **Reason**. Everything else follows from it.
+New this year: the first R, **Reason**. Each stage that follows shows its goal,
+the knowledge and the skill it needs, and its tools.
 :::
-
-## How Each Stage Is Presented
-
-Every stage in this part gets the same two slides.
-
-- **Goal**: what the stage must achieve before you move on
-- **Knowledge required**: what you need to understand
-- **Skill required**: what you need to be able to do
-- **Tools**: the R packages and programs you do it with
-- Learn the shape once, then read any stage quickly
-
-## Set Up: Install Positron
-
-::: {.goal}
-Positron is a free program from Posit where you write and run R code.
-:::
-
-:::: {.columns}
-::: {.column width="42%"}
-- Install **R** first (4.2 or newer) from cran.r-project.org
-- Then install **Positron** from positron.posit.co
-- **File → Open Folder** opens your project
-- **Ctrl + Enter** runs the current line
-- No Positron? **Posit Cloud** runs the same code online
-:::
-::: {.column width="58%"}
-![](images/screenshots/01-positron.jpg){fig-alt="Positron with the fbs-analysis project open: files on the left, an R script in the editor, and the R console, variables and plots panes on the right." width="100%"}
-:::
-::::
-
-## Set Up: GitHub Account and First Repository
-
-::: {.goal}
-GitHub keeps your code online, with a full history of every change.
-:::
-
-:::: {.columns}
-::: {.column width="42%"}
-- Sign up at github.com/signup with an email you will keep
-- Verify your email before anything else
-- Click **+** → **New repository**; name it, e.g. `fbs-analysis`
-- **Private** while you work; Public when you publish
-- Click **Create repository**
-:::
-::: {.column width="58%"}
-![](images/screenshots/02-github-new-repo.jpg){fig-alt="A new, empty GitHub repository page showing the repository address and the commands to push a project to it." width="100%"}
-:::
-::::
 
 ## R — Reason: Know Why You Analyse
 
 ::: {.goal}
 **Goal:** know exactly why you are analysing, before you open R.
 :::
-
-- **Research question**: what exactly do you want to know?
-- **Study population**: who is it about, and who should be left out?
-- **Outcome**: the main variable you want to explain
-- **Explanatory variables**: what might be related to the outcome
-- **Data**: which dataset, and does it fit this question?
-
-::: {.note}
-If you cannot write your reason in one sentence, do not open R yet.
-:::
-
-## R — Reason: Knowledge and Skill
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -111,7 +59,7 @@ If you cannot write your reason in one sentence, do not open R yet.
 ::: {.ks}
 [Skill required]{.ks-label}
 
-- Write your question in one clear sentence
+- Write the question, population, outcome, variables and data in one sentence
 - Turn the Reason into decisions: which rows and columns to keep
 :::
 :::
@@ -122,19 +70,20 @@ Example: among adults without known diabetes, is a larger waist associated with
 a higher fasting blood sugar, after taking age and sex into account?
 :::
 
+::: {.notes}
+Reason has five parts. The research question: what exactly do you want to
+know? The study population: who is it about, and who should be left out? The
+outcome: the main variable you want to explain. The explanatory variables:
+what might be related to the outcome. The data: which dataset, and does it fit
+this question? The test is simple. If you cannot write your reason in one
+sentence, do not open R yet.
+:::
+
 ## R — Read Data
 
 ::: {.goal}
 **Goal:** get the data into R with its types and missing values intact.
 :::
-
-- Data come from a file (CSV, Excel, SPSS, Stata) or a database; record where
-- Read the data with code, never by copying and pasting
-- Never edit the raw file; every change happens in your script
-- The Reason decides which rows (`filter()`) and columns (`select()`) you keep
-- Check the number of rows, columns and types straight after reading
-
-## R — Read: Knowledge and Skill
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -160,19 +109,19 @@ a higher fasting blood sugar, after taking age and sex into account?
 Tools: readxl · readr · haven · here · janitor
 :::
 
+::: {.notes}
+Data come from a file (CSV, Excel, SPSS, Stata) or a database; record where.
+Read the data with code, never by copying and pasting, and never edit the raw
+file: every change happens in your script. The Reason decides which rows
+(filter) and which columns (select) you keep. Check the number of rows,
+columns and types straight after reading.
+:::
+
 ## E — Explore Data
 
 ::: {.goal}
 **Goal:** look carefully at the data before you fit any model.
 :::
-
-- Two ways to look: graphs and summary tables
-- Start with the outcome: its shape, its middle and its spread
-- Impossible or unusual values show up here, or not at all
-- Count the missing values and ask why they are missing
-- Never delete quietly; write down every exclusion and the reason for it
-
-## E — Explore: Knowledge and Skill
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -198,19 +147,19 @@ Tools: readxl · readr · haven · here · janitor
 Tools: ggplot2 · gtsummary · skimr · naniar
 :::
 
+::: {.notes}
+There are two ways to look: graphs and summary tables. Start with the
+outcome: its shape, its middle and its spread. Impossible or unusual values
+show up here, or not at all. Count the missing values and ask why they are
+missing. Never delete quietly; write down every exclusion and the reason for
+it.
+:::
+
 ## A — Assume
 
 ::: {.goal}
 **Goal:** state what your analysis depends on, before you fit it.
 :::
-
-- Every statistical method rests on assumptions
-- Linear regression assumes a roughly straight line relationship
-- It also assumes independent people: no repeats, no family members
-- Name the roles: outcome, exposure, confounder
-- Some checks come before the model; others come after it, in Assess
-
-## A — Assume: Knowledge and Skill
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -236,19 +185,18 @@ Tools: ggplot2 · gtsummary · skimr · naniar
 Tools: ggplot2 (`geom_smooth()`) · dagitty.net · pen and paper
 :::
 
+::: {.notes}
+Every statistical method rests on assumptions. Linear regression assumes a
+roughly straight line relationship, and independent people: no repeats and no
+family members. Name the roles: outcome, exposure, confounder. Some checks
+come before the model; others come after it, in Assess.
+:::
+
 ## A — Apply Models and Methods
 
 ::: {.goal}
 **Goal:** fit the model your Reason actually needs.
 :::
-
-- The outcome type chooses the model: continuous → linear, binary → logistic
-- Decide first: explain a relationship (inference) or predict (prediction)
-- Start simple, then add explanatory variables
-- `lm()` fits a straight line through the data
-- Do not interpret yet; Assess comes first
-
-## A — Apply: Knowledge and Skill
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -274,19 +222,19 @@ Tools: ggplot2 (`geom_smooth()`) · dagitty.net · pen and paper
 Tools: R · Positron · lm · glm · broom
 :::
 
+::: {.notes}
+The outcome type chooses the model: a continuous outcome needs linear
+regression, a binary outcome needs logistic regression. Decide first whether
+you want to explain a relationship (inference) or to predict (prediction).
+Start simple, then add explanatory variables. lm() fits a straight line
+through the data. Do not interpret yet; Assess comes first.
+:::
+
 ## A — Assess Results and Models
 
 ::: {.goal}
 **Goal:** show that the model is good enough, and say where the result applies.
 :::
-
-- Check the assumptions again, against the model you actually fitted
-- Residual = observed minus predicted; good residuals form a shapeless band around 0
-- Outliers and influential points are two different problems
-- R² tells you how much of the variation the model explains
-- If an assumption fails, say so: treat the result as approximate, or change the model
-
-## A — Assess: Knowledge and Skill
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -312,19 +260,20 @@ Tools: R · Positron · lm · glm · broom
 Tools: broom · performance · car
 :::
 
+::: {.notes}
+Check the assumptions again, against the model you actually fitted. A
+residual is observed minus predicted; good residuals form a shapeless band
+around zero. Outliers and influential points are two different problems. R
+squared tells you how much of the variation the model explains. If an
+assumption fails, say so: treat the result as approximate, or change the
+model.
+:::
+
 ## P — Present Results
 
 ::: {.goal}
 **Goal:** report the results so a reader can understand and use them.
 :::
-
-- A table, plus one plain language sentence of interpretation
-- Report the estimate and its 95% CI, not the p value alone
-- Say "associated with", not "causes", unless your design allows it
-- Follow a reporting guideline: SAMPL for statistics, EQUATOR for study designs
-- The ASA statement: a p value alone does not replace scientific reasoning
-
-## P — Present: Knowledge and Skill
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -350,19 +299,20 @@ Tools: broom · performance · car
 Tools: gtsummary · gt · Quarto
 :::
 
+::: {.notes}
+Give a table, plus one plain language sentence of interpretation. Report the
+estimate and its 95% confidence interval, not the p value alone. Say
+"associated with", not "causes", unless your design allows it. Follow a
+reporting guideline: SAMPL for statistics, the EQUATOR Network for study
+designs. The ASA statement reminds us that a p value alone does not replace
+scientific reasoning.
+:::
+
 ## P — Publish Results, Data and Code
 
 ::: {.goal}
 **Goal:** release your code and results so others can check them.
 :::
-
-- Put the code, tables and interpretation together in a Quarto report
-- Keep the code on GitHub: Git records who changed what, when and why
-- Share data only if ethics approval and the data owner allow it
-- Never publish data that could identify anyone (even age + sex + village)
-- When sharing is allowed, deposit data in Zenodo, OSF or Dryad so it can be cited
-
-## P — Publish: Knowledge and Skill
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -388,6 +338,14 @@ Tools: gtsummary · gt · Quarto
 Tools: Git · GitHub · Quarto · Zenodo · OSF
 :::
 
+::: {.notes}
+Put the code, tables and interpretation together in a Quarto report. Keep the
+code on GitHub: Git records who changed what, when and why. Share data only if
+ethics approval and the data owner allow it. Never publish data that could
+identify anyone; even age, sex and village together can. When sharing is
+allowed, deposit the data in Zenodo, OSF or Dryad so it can be cited.
+:::
+
 ## Reproducibility Runs Through Every Stage
 
 ::: {.goal}
@@ -405,15 +363,7 @@ library(readxl)
 fbs <- read_excel(here("datasets", "mssm_fbs_workshop.xlsx"))
 ```
 
-## Where Workflows Break Down
-
-- No clear Reason, so the wrong population or outcome gets analysed
-- Explore is skipped when the deadline is close, and errors surface late
-- Assumptions stay in your head, so nobody can check them
-- Models are fitted but never assessed
-- No version control, so `final_v3_really_final.R` becomes the archive
-
-## Part 1 — Recap
+## Part 2 — Recap
 
 ::: {.goal}
 Reason · Read · Explore · Assume · Apply · Assess · Present · Publish
@@ -422,5 +372,5 @@ Reason · Read · Explore · Assume · Apply · Assess · Present · Publish
 - Reason first: one sentence before you open R
 - Eight stages, in the same order, every time
 - Each stage needs both knowledge and skill
-- Positron to run R; GitHub to keep and share your code
 - Every step in code, so others can check it and run it again
+- Quarto puts the code and the words together; GitHub keeps them safe

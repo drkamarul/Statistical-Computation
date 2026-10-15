@@ -38,14 +38,14 @@ Questions?
 
 - Musa KI. *The RREAAAPP Data Analysis Workflow* (Topic B). Smart Data Analysis in Health and Medicine workshop, 2026.
 - Musa KI. *Data Analysis Workflow* and *Smart Data Analysis in Medical and Health Research.* Universiti Sains Malaysia.
-- Lang TA, Altman DG. *SAMPL Guidelines for Statistical Reporting.* EQUATOR Network.
-- Wasserstein RL, Lazar NA. The ASA's statement on p-values. *Am Stat.* 2016;70(2):129–33.
+- Lang TA, Altman DG. *SAMPL Guidelines* (EQUATOR Network) · Wasserstein RL, Lazar NA. The ASA's statement on p-values. *Am Stat.* 2016;70(2):129–33.
 - Musa KI, Wan Mansor WN, Tengku Hanis TM. *Data Analysis in Medicine and Health Using R.* CRC Press.
+- Setup: <https://positron.posit.co/download.html> · <https://quarto.org/docs/tools/positron/> · <https://github.com/signup>
 
 ## References — AI Assistants
 
 - Google. *Gemini Assistant* <https://gemini.google/assistant/> · *Antigravity* <https://antigravity.google/>
-- Anthropic. *Claude* <https://claude.com/product/overview> · *Claude Code* <https://code.claude.com/docs/en/overview>
+- Anthropic. *Claude* <https://claude.com/product/overview> · *Claude Code* <https://code.claude.com/docs/en/overview> · *Claude Desktop* <https://code.claude.com/docs/en/desktop-quickstart>
 - Anthropic. *Managed Agents: Data Analyst Agent* <https://platform.claude.com/cookbook/managed-agents-data-analyst-agent>
 - OpenAI. *AI for Data Science and Analytics* <https://chatgpt.com/business/ai-for-data-science-analytics/>
 - Model line-ups, checked 14 October 2026: <https://ai.google.dev/gemini-api/docs/models> · <https://platform.claude.com/docs/en/about-claude/models/overview> · <https://developers.openai.com/api/docs/models>

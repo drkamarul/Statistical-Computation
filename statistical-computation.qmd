@@ -27,10 +27,14 @@ format:
     highlight-style: github
 ---
 
-{{< include _part1-workflow.qmd >}}
+{{< include _part0-objectives.qmd >}}
 
-{{< include _part2-ai-assistants.qmd >}}
+{{< include _part1-setup.qmd >}}
 
-{{< include _part3-hands-on.qmd >}}
+{{< include _part2-workflow.qmd >}}
+
+{{< include _part3-ai-assistants.qmd >}}
+
+{{< include _part4-hands-on.qmd >}}
 
 {{< include _appendix.qmd >}}

@@ -22,12 +22,12 @@ term explained the first time it appears.
 
 At the end of the lecture, students will be able to:
 
-1. Install the Positron IDE.
-2. Register a GitHub account and create a repository.
+1. Set up Positron IDE, Google Antigravity 2.0 and, optionally, Claude Desktop
+   with Claude Code.
+2. Understand Quarto documents and GitHub repositories.
 3. Understand the RREAAAPP workflow.
-4. Integrate an AI assistant into the RREAAAPP workflow.
-5. Create an end to end data analysis plan, from reading data to publishing
-   results and code to GitHub.
+4. Understand what AI assistants are and where they run.
+5. Integrate an AI assistant into the RREAAAPP workflow.
 
 ## The workflow being taught
 
@@ -50,63 +50,70 @@ Present, Publish.
    `scripts/check_slides.R` only counts flush-left `- ` bullets; it cannot see
    indented or nested ones. That is a limitation of its regex, not permission
    to hide a sixth point one level down. Do not build crowded slides around
-   the linter's blind spot.
-2. Slide budget is fixed: Part 1 = 25, Part 2 = 25, Part 3 = 3, appendix = 4.
+   the linter's blind spot. Speaker notes (`::: {.notes}`) are written as
+   prose, never as `- ` bullets, because the linter counts them too.
+2. Slide budget is fixed: Part 0 = 2, Part 1 = 8, Part 2 = 13, Part 3 = 25,
+   Part 4 = 3, appendix = 4 (55 slides plus the title slide).
 3. **No figures or plots of our own making**, and no diagrams-as-images.
    Structure comes from CSS classes, Quarto columns and markdown tables.
 4. **Screenshots of real software are allowed, maximum 6 in the whole deck.**
    Only of real products the lecture teaches (Google Antigravity 2.0, Claude
-   Code, Positron, GitHub). Capture them with computer-use, save as PNG or JPEG under
-   `images/screenshots/`, give each meaningful alt text, and never capture
-   personal data, tokens, email addresses or other people's information on
-   screen. Part 2 must include a screenshot of Google Antigravity 2.0.
+   Code and Claude Desktop, Positron, Quarto, GitHub). Capture them with
+   computer-use, save as PNG or JPEG under `images/screenshots/`, give each
+   meaningful alt text, and never capture personal data, tokens, email
+   addresses, private session titles or other people's information on screen.
+   Part 3 must include a screenshot of Google Antigravity 2.0.
 5. **Code fences must never be executable.** Write all R and shell code as
    plain ` ```r ` / ` ```bash ` fences, never ` ```{r} `. Nothing in the deck
    runs, so rendering needs only Quarto and never R. An executable chunk
    invokes the knitr engine, which needs R and the packages, and makes every
-   render depend on them.
+   render depend on them. To show a Quarto code cell on a slide, put it inside
+   a ` ```markdown ` fence and write the cell header as ` ```{{r}} `.
 6. **Do not cite sources from slides.** The deck YAML sets both
    `bibliography: references.bib` and `suppress-bibliography: true`, so an
    `[@key]` citation renders as a dead parenthetical. The two reference slides
    at the end of `_appendix.qmd` are hand-written lists ending in real URLs;
    edit those directly. `references.bib` stays as the machine-readable
    provenance record, not wired to any slide.
-7. Part 2 facts about AI products go stale fast. Re-verify by web search
-   before editing, and update the `note = {Accessed ...}` field in
-   `references.bib`.
-8. **No dataset is committed.** The Part 3 hands-on uses the MSSM fasting
+7. Facts about AI products (Part 3) and install steps (Part 1) go stale fast.
+   Re-verify by web search before editing, and update the
+   `note = {Accessed ...}` field in `references.bib`.
+8. **No dataset is committed.** The Part 4 hands-on uses the MSSM fasting
    blood sugar workshop data (`datasets/mssm_fbs_workshop.xlsx`), distributed
    to students separately. `datasets/` is gitignored; the repo is public.
 
 ## Slide structure
 
-Part 1 (RREAAAPP): divider, why a workflow, RREAAAPP at a glance, how each
-stage is presented, set up Positron, set up GitHub, then a two-slide pair per
-stage for all eight stages, then reproducibility, where workflows break down,
-recap.
+- **Part 0, Learning Objectives (2):** the learning objectives, then today's
+  plan as a table of the parts. No divider.
+- **Part 1, Set Up Your Tools (8):** divider; install Positron; Quarto, what a
+  `.qmd` file is; Quarto, the YAML header and document structure; install
+  Google Antigravity 2.0; install Claude Desktop (optional, needs a paid
+  plan); GitHub account and first repository; a ready to start checklist.
+- **Part 2, The RREAAAPP Workflow (13):** divider; why a workflow; RREAAAPP at
+  a glance; one slide per stage for all eight stages (goal line, knowledge 3
+  and skill 2 columns, tools note, extra detail in speaker notes);
+  reproducibility; recap.
+- **Part 3, AI Assistants (25):** providers (Google, Anthropic, OpenAI),
+  frontier and open models, the three platforms (web, IDE, CLI) with pros and
+  cons, worked examples **Google Antigravity 2.0** and **Claude Code**, best
+  practice for data analysis with an assistant.
+- **Part 4, Hands-on (3):** a data analysis plan that integrates RREAAAPP and
+  the student's own AI assistant, using the MSSM FBS data. Must be doable in
+  **20 minutes**.
+- **Appendix (4):** five key summaries, thank you, two reference slides.
 
-Part 2 (AI assistants): providers (Google, Anthropic, OpenAI), frontier and
-open models, the three platforms (web, IDE, CLI) with pros and cons, worked
-examples **Google Antigravity 2.0** and **Claude Code**, best practice for data
-analysis with an assistant.
-
-Part 3 (hands-on, 3 slides): a data analysis plan that integrates RREAAAPP and
-the student's own AI assistant, using the MSSM FBS data. Must be doable in
-**20 minutes**.
-
-Appendix: five key summaries, thank you, two reference slides.
-
-`docs/superpowers/specs/2026-10-14-rreaaapp-revision-design.md` holds the
+`docs/superpowers/specs/2026-10-15-six-part-reorganisation-design.md` holds the
 slide by slide layout.
 
 ## File map
 
 - `statistical-computation.qmd`: the deck. YAML (title, author, all revealjs
-  options, `embed-resources: true`) plus four includes. No slide content of its
+  options, `embed-resources: true`) plus six includes. No slide content of its
   own. There is no `_quarto.yml` and no `index.qmd`.
-- `_part1-workflow.qmd`, `_part2-ai-assistants.qmd`, `_part3-hands-on.qmd`,
-  `_appendix.qmd`: the content. The `_` prefix stops Quarto rendering them
-  standalone.
+- `_part0-objectives.qmd`, `_part1-setup.qmd`, `_part2-workflow.qmd`,
+  `_part3-ai-assistants.qmd`, `_part4-hands-on.qmd`, `_appendix.qmd`: the
+  content. The `_` prefix stops Quarto rendering them standalone.
 - `styles/academic.scss`: all theme variables and classes. Keep it minimal.
 - `images/screenshots/`: the only images allowed in the deck (max 6).
 - `scripts/check_slides.R`: budget, five-point, screenshot and acronym linter.
@@ -143,7 +150,7 @@ quarto render statistical-computation.qmd   # must build clean
 
 Never raise `MAX_BULLETS`, `MAX_SCREENSHOTS` or a budget number to make the
 linter pass. Cut the content instead; the limits are the lecture's design, not
-an obstacle.
+an obstacle. Only the author changes the budget.
 
 ## Publishing
 

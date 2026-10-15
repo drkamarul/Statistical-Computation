@@ -1,0 +1,22 @@
+## Learning Objectives
+
+At the end of this lecture, you will be able to:
+
+- Set up Positron, Google Antigravity 2.0 and, if you wish, Claude Desktop
+- Explain what a Quarto document and a GitHub repository are
+- Describe the eight stages of the RREAAAPP workflow
+- Explain what an AI assistant is and where it runs
+- Use an AI assistant at each stage of RREAAAPP
+
+## Today's Plan
+
+| Part | Topic | You leave with |
+|---|---|---|
+| **1** | Set up your tools | Positron, Quarto, Antigravity and GitHub ready to use |
+| **2** | The RREAAAPP workflow | Eight stages to follow in every analysis |
+| **3** | AI assistants | Which assistant to use, where, and how to use it safely |
+| **4** | Hands-on, 20 minutes | Your own analysis plan, pushed to GitHub |
+
+::: {.note}
+The appendix holds five key takeaways and the references.
+:::

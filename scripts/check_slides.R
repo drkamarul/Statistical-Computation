@@ -4,9 +4,11 @@
 # Base R only, no package dependencies. Run from the project root.
 
 BUDGET <- c(
-  "_part1-workflow.qmd"      = 25L,
-  "_part2-ai-assistants.qmd" = 25L,
-  "_part3-hands-on.qmd"      =  3L,
+  "_part0-objectives.qmd"    =  2L,
+  "_part1-setup.qmd"         =  8L,
+  "_part2-workflow.qmd"      = 13L,
+  "_part3-ai-assistants.qmd" = 25L,
+  "_part4-hands-on.qmd"      =  3L,
   "_appendix.qmd"            =  4L
 )
 MAX_BULLETS <- 5L
@@ -90,7 +92,7 @@ if (length(problems)) {
   quit(status = 1L)
 }
 
-cat(sprintf(paste0("Slide check passed: 25 / 25 / 3 / 4 slides, no slide over 5 bullets, ",
+cat(sprintf(paste0("Slide check passed: %s slides, no slide over %d bullets, ",
                    "%d of %d screenshots, RREAAAPP spelling.\n"),
-            n_img, MAX_SCREENSHOTS))
+            paste(BUDGET, collapse = " / "), MAX_BULLETS, n_img, MAX_SCREENSHOTS))
 quit(status = 0L)

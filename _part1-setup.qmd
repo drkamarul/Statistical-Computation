@@ -1,6 +1,6 @@
 ## Part 1 — Set Up Your Tools {background-color="#1A1A1A"}
 
-Positron · Quarto · Antigravity 2.0 · Claude Desktop · GitHub
+Positron · Quarto · Antigravity 2.0 · Claude Desktop · GitHub · Git
 
 ## Install Positron
 
@@ -124,6 +124,130 @@ GitHub keeps your code online, with a full history of every change.
 :::
 ::::
 
+## Install and Check Git
+
+::: {.goal}
+Git records every change to your files on your computer. GitHub keeps a copy online.
+:::
+
+:::: {.columns}
+::: {.column width="50%"}
+- Windows: install **Git for Windows** from git-scm.com/install/windows and accept the default options
+- It brings **Git Credential Manager**, which signs you in to GitHub through your browser
+- macOS: type `git --version`; if Git is missing, macOS offers to install it
+- Check in a terminal, the window where you type commands (Positron: **Terminal → New Terminal**)
+:::
+::: {.column width="50%"}
+```bash
+git --version
+# git version 2.56.0.windows.2
+
+git config --global user.name  "Your Name"
+git config --global user.email "you@example.com"
+```
+:::
+::::
+
+::: {.note}
+Use the same email as your GitHub account, so your commits are linked to you.
+:::
+
+::: {.notes}
+Git and GitHub are not the same thing. Git is a free program on your own
+computer that saves snapshots of your project; GitHub is a website that keeps
+a copy of those snapshots online. The two `git config` lines are typed once per
+computer and tell Git who you are; every commit you make carries this name and
+email. Any recent version number from `git --version` is fine. If it says the command is not found on Windows, close and
+reopen Positron or Antigravity after installing, because a terminal opened
+before the install does not know about Git yet.
+:::
+
+## Personal Access Token: a Password for Git
+
+::: {.goal}
+A personal access token (PAT) is a long password that GitHub makes for Git. Most of you will not need one today.
+:::
+
+:::: {.columns}
+::: {.column width="50%"}
+**When it is useful**
+
+- The browser sign-in from Git Credential Manager fails or never appears
+- You work without that sign-in, e.g. Posit Cloud or R packages such as `usethis`
+- Git asks for a password: paste the token, never your GitHub password
+:::
+::: {.column width="50%"}
+**How to make a classic token**
+
+- GitHub: **Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token (classic)**
+- Tick the **repo** scope, set an expiry such as 30 days, and copy it: GitHub shows it only once
+:::
+::::
+
+::: {.note}
+Treat a token like a password. Never paste it into an AI prompt, a `.qmd` file or a commit.
+:::
+
+::: {.notes}
+A classic token with the repo scope can read and change every repository you
+own, which is why it should expire. When it expires, make a new one the same
+way. In R, `usethis::create_github_token()` opens the same GitHub page with the
+scopes already ticked, and `gitcreds::gitcreds_set()` asks for the token and
+stores it safely, so you paste it once. If a token ever appears in a file you
+pushed, delete the token on GitHub straight away and make a new one; deleting
+the file is not enough, because the old commit still holds it.
+:::
+
+## Prompt Your Assistant to Commit and Push
+
+::: {.goal}
+Tell the assistant in plain words what to save and where to send it. It types the Git commands for you.
+:::
+
+```text
+Render fbs-report.qmd to HTML. Then commit fbs-report.qmd and
+fbs-report.html with the message "Add first FBS report" and push to GitHub.
+```
+
+- **Commit**: save a snapshot of your files, with a short message saying what changed
+- **Push**: send your commits from your computer to your repository on GitHub
+- Name the files, the commit message and where to push; a vague prompt gets a vague result
+- Read the commands the assistant runs, then refresh your repository page on github.com
+
+::: {.notes}
+The rendered HTML file is the report other people can open without R, so it
+is worth pushing next to the `.qmd` that made it. Antigravity may ask you to
+approve each command before it runs; read the command and accept it only if it
+matches what you asked for. The data file in `datasets/` is never pushed: it
+is listed in `.gitignore`, which you set up in the hands-on in Part 4.
+:::
+
+## Check: Antigravity and GitHub Work Together
+
+::: {.goal}
+One small test push proves that Git, your GitHub sign-in and Antigravity all work.
+:::
+
+- Antigravity is open, you are signed in, and it answers a simple question
+- Prompt: *Clone github.com/your-username/fbs-analysis into my Documents folder*, then open that folder
+- Prompt: *Create README.md with one line, "My FBS analysis", then commit and push it*
+- If a GitHub sign-in window opens, sign in; use a token only if that fails
+- Refresh your repository on github.com: README.md is there
+
+::: {.note}
+Stuck at any line? Raise your hand now. Part 4 ends with a push, so this must work.
+:::
+
+::: {.notes}
+Clone means making a copy of a GitHub repository on your computer, linked to
+it so that later pushes go back to the same place. Replace your-username with
+your own GitHub username; the repository is the one you made on the GitHub
+slide. Common problems: Git is not installed, so the clone fails at once; the
+browser sign-in was closed, so the push is refused; or the user.name and
+user.email lines were skipped, so the commit is refused. Fix the one that
+matches the message and ask Antigravity to try again.
+:::
+
 ## Ready to Start: a Checklist
 
 ::: {.goal}
@@ -133,5 +257,5 @@ Tick all five before Part 2. Ask for help now, not during the hands-on.
 - Positron opens your project folder, and `1 + 1` runs in the Console
 - A new `.qmd` file renders to HTML in Positron
 - Antigravity 2.0 is installed and you are signed in
-- Your GitHub email is verified and your first repository exists
+- Git is installed, and your test README push shows on github.com
 - Optional: Claude Desktop opens your folder in the Code tab

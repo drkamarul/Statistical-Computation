@@ -5,7 +5,7 @@
 
 BUDGET <- c(
   "_part0-objectives.qmd"    =  2L,
-  "_part1-setup.qmd"         =  8L,
+  "_part1-setup.qmd"         = 12L,
   "_part2-workflow.qmd"      = 13L,
   "_part3-ai-assistants.qmd" = 25L,
   "_part4-hands-on.qmd"      =  3L,

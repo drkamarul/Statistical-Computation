@@ -52,8 +52,8 @@ Present, Publish.
    to hide a sixth point one level down. Do not build crowded slides around
    the linter's blind spot. Speaker notes (`::: {.notes}`) are written as
    prose, never as `- ` bullets, because the linter counts them too.
-2. Slide budget is fixed: Part 0 = 2, Part 1 = 8, Part 2 = 13, Part 3 = 25,
-   Part 4 = 3, appendix = 4 (55 slides plus the title slide).
+2. Slide budget is fixed: Part 0 = 2, Part 1 = 12, Part 2 = 13, Part 3 = 25,
+   Part 4 = 3, appendix = 4 (59 slides plus the title slide).
 3. **No figures or plots of our own making**, and no diagrams-as-images.
    Structure comes from CSS classes, Quarto columns and markdown tables.
 4. **Screenshots of real software are allowed, maximum 6 in the whole deck.**
@@ -86,10 +86,13 @@ Present, Publish.
 
 - **Part 0, Learning Objectives (2):** the learning objectives, then today's
   plan as a table of the parts. No divider.
-- **Part 1, Set Up Your Tools (8):** divider; install Positron; Quarto, what a
+- **Part 1, Set Up Your Tools (12):** divider; install Positron; Quarto, what a
   `.qmd` file is; Quarto, the YAML header and document structure; install
   Google Antigravity 2.0; install Claude Desktop (optional, needs a paid
-  plan); GitHub account and first repository; a ready to start checklist.
+  plan); GitHub account and first repository; install and check Git; personal
+  access token (classic) and when it helps; prompting an assistant to commit
+  and push; an Antigravity and GitHub test push checklist; a ready to start
+  checklist.
 - **Part 2, The RREAAAPP Workflow (13):** divider; why a workflow; RREAAAPP at
   a glance; one slide per stage for all eight stages (goal line, knowledge 3
   and skill 2 columns, tools note, extra detail in speaker notes);

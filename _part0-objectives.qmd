@@ -12,7 +12,7 @@ At the end of this lecture, you will be able to:
 
 | Part | Topic | You leave with |
 |---|---|---|
-| **1** | Set up your tools | Positron, Quarto, Antigravity and GitHub ready to use |
+| **1** | Set up your tools | Positron, Quarto, Antigravity, Git and GitHub ready to use |
 | **2** | The RREAAAPP workflow | Eight stages to follow in every analysis |
 | **3** | AI assistants | Which assistant to use, where, and how to use it safely |
 | **4** | Hands-on, 20 minutes | Your own analysis plan, pushed to GitHub |

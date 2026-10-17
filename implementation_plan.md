@@ -19,7 +19,7 @@ commit `705c6d6`.
 
 - **RREAAAPP**, eight stages: Reason, Read, Explore, Assume, Apply, Assess,
   Present, Publish. No "REAAAPP" anywhere in slides or docs.
-- Max **5 top-level bullets** per slide; budget **2 / 8 / 13 / 25 / 3 / 4**.
+- Max **5 top-level bullets** per slide; budget **2 / 12 / 13 / 25 / 3 / 4**.
 - Speaker notes are prose, never `- ` bullets.
 - **Max 6 screenshots**, real products only, under `images/screenshots/`.
 - Code fences are plain ` ```r `, never executable; a Quarto cell shown on a
@@ -110,3 +110,30 @@ commit `705c6d6`.
 - 2026-10-15: budget 2 / 8 / 13 / 25 / 3 / 4; one slide per RREAAAPP stage
   with notes; five screenshots (Claude Desktop text only); Part 0 objectives replace the old list;
   `About_This_Project.md` left as the author wrote it.
+
+---
+
+## Task 8: Part 1 Git, token and push (2026-10-17)
+
+Author request: a checklist proving Antigravity and GitHub work on the
+student's computer, a Git for Windows install check, personal access tokens
+and when they help, and how to prompt an assistant to commit and push a
+rendered document.
+
+- [x] Author decisions (2026-10-17): Part 1 budget 8 → 12 (deck 59 plus the
+  title slide); teach the **classic** token; checklist is an end-to-end test
+  push from Antigravity; the push prompt is short, no extra safety steps.
+- [x] Facts re-verified 2026-10-17: Git for Windows 2.56.0(2) from
+  git-scm.com/install/windows, bundles Git Credential Manager; GitHub docs on
+  classic tokens (Developer settings → Tokens (classic), `repo` scope, set an
+  expiry, treat like a password). `references.bib` entries added.
+- [x] Linter budget, `CLAUDE.md`, `AGENTS.md` updated to 2 / 12 / 13 / 25 / 3 / 4.
+- [x] Four new slides after "GitHub Account and First Repository":
+  Install and Check Git; Personal Access Token; Prompt Your Assistant to Commit
+  and Push; Check: Antigravity and GitHub Work Together. No new screenshots.
+- [x] Final "Ready to Start" checklist names Git and the test push; Part 0
+  plan table and Part 1 divider mention Git; appendix Setup references gain
+  the Git and token URLs.
+- [x] Verified 2026-10-17: lint exits 0 (2 / 12 / 13 / 25 / 3 / 4, 5 of 6
+  screenshots), render clean, new slides and references checked in the browser.
+- [ ] Commit, then push, each only after the author says yes.
